@@ -1,0 +1,15 @@
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\BeHatSenLotus.exe.config
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\BeHatSenLotus.exe
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\BeHatSenLotus.pdb
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\EntityFramework.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\EntityFramework.xml
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.AssemblyReference.cache
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.SuggestedBindingRedirects.cache
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.CoreCompileInputs.cache
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.CopyComplete
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.exe
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.pdb
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.UpdateV5.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.GenerateResource.cache
