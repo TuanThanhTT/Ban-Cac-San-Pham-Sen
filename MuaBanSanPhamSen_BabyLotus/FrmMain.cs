@@ -1,14 +1,7 @@
-﻿using BeHatSenLotus.Model;
-using Guna.UI2.WinForms;
+﻿using Guna.UI2.WinForms;
 using MuaBanSanPhamSen_BabyLotus.Page;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -90,23 +83,71 @@ namespace MuaBanSanPhamSen_BabyLotus
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             updateBoder(btnHoaDon);
+            addTabMain();
+            var form = new FrmHoaDon();
+            addTabPage(tabMain, form);
+
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             updateBoder(btnKhachHang);
+            addTabMain();
+            var form = new FrmQuanLyKhachHang();
+            addTabPage(tabMain, form);
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             updateBoder(btnSanPham);
+            addTabMain();
+            var form = new FrmSanPham();
+            addTabPage(tabMain, form);
+
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            updateBoder(btnTaiKhoan);
+            updateBoder(btnSanPham);
+            addTabMain();
+            var form = new FrmNhaCungCap();
+            addTabPage(tabMain, form);
 
-           
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnLoaiSanPham);
+            addTabMain();
+            var form = new FrmLoaiSanPham();
+            addTabPage(tabMain, form);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTaiKhoan_Click_1(object sender, EventArgs e)
+        {
+            updateBoder(btnTaiKhoan);
+            addTabMain();
+            var form = new FrmTaiKhoan();
+            addTabPage(tabMain, form);
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnThongKe);
+            addTabMain();
+            var form = new FrmTaiKhoan();
+            addTabPage(tabMain, form);
         }
     }
 }

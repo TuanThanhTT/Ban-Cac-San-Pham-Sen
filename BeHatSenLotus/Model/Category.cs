@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BeHatSenLotus.Model
 {
@@ -10,7 +6,7 @@ namespace BeHatSenLotus.Model
     {
         public int categoryId { get; set; }
         public string categoryName { get; set; }
-
+        public bool isDelete { get; set; }  
         public virtual ICollection<Product> Products
         {
             get; set;

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeHatSenLotus.Model
 {
@@ -16,6 +13,7 @@ namespace BeHatSenLotus.Model
         public bool isDelete { get; set; }
         public Decimal price { get; set; }
         public int quantity { get; set; }
+        public string imgs { get; set; } 
 
         public virtual Category Category { get; set; }
         public virtual Manfactory Manfactory { get; set; }

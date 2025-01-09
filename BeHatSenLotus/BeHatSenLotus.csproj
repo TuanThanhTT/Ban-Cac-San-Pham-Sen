@@ -57,6 +57,22 @@
     <Compile Include="Migrations\202412241101060_UpdateV5.designer.cs">
       <DependentUpon>202412241101060_UpdateV5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202501070320105_addImgProduct.cs" />
+    <Compile Include="Migrations\202501070320105_addImgProduct.designer.cs">
+      <DependentUpon>202501070320105_addImgProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501070720265_updateManfactory.cs" />
+    <Compile Include="Migrations\202501070720265_updateManfactory.designer.cs">
+      <DependentUpon>202501070720265_updateManfactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501090248299_updatedeleteCate.cs" />
+    <Compile Include="Migrations\202501090248299_updatedeleteCate.designer.cs">
+      <DependentUpon>202501090248299_updatedeleteCate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501090425588_updateManfactoryIssdelete.cs" />
+    <Compile Include="Migrations\202501090425588_updateManfactoryIssdelete.designer.cs">
+      <DependentUpon>202501090425588_updateManfactoryIssdelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\AccountPermisstion.cs" />
@@ -79,6 +95,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202412241101060_UpdateV5.resx">
       <DependentUpon>202412241101060_UpdateV5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501070320105_addImgProduct.resx">
+      <DependentUpon>202501070320105_addImgProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501070720265_updateManfactory.resx">
+      <DependentUpon>202501070720265_updateManfactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501090248299_updatedeleteCate.resx">
+      <DependentUpon>202501090248299_updatedeleteCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501090425588_updateManfactoryIssdelete.resx">
+      <DependentUpon>202501090425588_updateManfactoryIssdelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

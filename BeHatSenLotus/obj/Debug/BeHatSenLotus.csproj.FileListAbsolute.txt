@@ -13,3 +13,7 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.e
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.pdb
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.UpdateV5.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.GenerateResource.cache
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.addImgProduct.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactory.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updatedeleteCate.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactoryIssdelete.resources

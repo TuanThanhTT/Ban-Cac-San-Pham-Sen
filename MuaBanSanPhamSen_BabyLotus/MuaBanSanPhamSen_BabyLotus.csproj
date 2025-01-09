@@ -51,6 +51,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,11 +83,65 @@
     <Compile Include="Page\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Page\FrmHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmHoaDon.Designer.cs">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmLoadAnh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmLoadAnh.Designer.cs">
+      <DependentUpon>FrmLoadAnh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmLoaiSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmLoaiSanPham.Designer.cs">
+      <DependentUpon>FrmLoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmNhaCungCap.Designer.cs">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\FrmNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Page\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmQuanLyKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmQuanLyKhachHang.Designer.cs">
+      <DependentUpon>FrmQuanLyKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmSanPham.Designer.cs">
+      <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmTaiKhoan.Designer.cs">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\FrmUploadAnhSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\FrmUploadAnhSanPham.Designer.cs">
+      <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\XemAnhSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\XemAnhSanPham.Designer.cs">
+      <DependentUpon>XemAnhSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,8 +151,35 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmHoaDon.resx">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmLoadAnh.resx">
+      <DependentUpon>FrmLoadAnh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmLoaiSanPham.resx">
+      <DependentUpon>FrmLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmNhaCungCap.resx">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmQuanLyKhachHang.resx">
+      <DependentUpon>FrmQuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmSanPham.resx">
+      <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmTaiKhoan.resx">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmUploadAnhSanPham.resx">
+      <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\XemAnhSanPham.resx">
+      <DependentUpon>XemAnhSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,6 +218,7 @@
   <ItemGroup>
     <Folder Include="Image\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeHatSenLotus\BeHatSenLotus.csproj">
