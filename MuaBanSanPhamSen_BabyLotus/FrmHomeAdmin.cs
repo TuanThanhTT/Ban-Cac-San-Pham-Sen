@@ -10,34 +10,66 @@ namespace MuaBanSanPhamSen_BabyLotus
 {
     public partial class FrmHomeAdmin : UserControl
     {
-        private int pageNow = 1;
+        private int pageNow = 0;
         private int countPage = 0;
         public FrmHomeAdmin()
         {
             InitializeComponent();
+            setCountpage();
             loadSanPham();
         }
 
 
-        public void loadSanPham()
+        public async void setCountpage()
+        {
+            var ds = await getDanhSach();
+            if(ds.Count > 0 )
+            {
+                countPage = (ds.Count / 1);
+                if(countPage> 0)
+                {
+                    pageNow = 1;
+                }
+
+                lbCountPage.Text = pageNow+ "/" + countPage;
+            }
+
+        }
+
+        public async void loadSanPham()
         {
             try
             {
-                LayoutHienThiSanPham.Controls.Clear();  
-                for (int i = 0; i < 20; i++)
+                LayoutHienThiSanPham.Controls.Clear();
+
+                var dsSanPham = await getDanhSach();
+
+                int star = (pageNow-1) * 1;
+                int end = star + 1;
+
+                if (dsSanPham.Count < end)
                 {
-                    var userFrom = new FrmSanPhamItem();
-
-                    LayoutHienThiSanPham.Controls.Add(userFrom);
+                    end = dsSanPham.Count;
                 }
-
-
-
+                if (star >= 0)
+                {
+                    for (int i = star; i < end; i++)
+                    {
+                        if (i >= dsSanPham.Count) break; // Đã thay đổi thành i >= dsSanPham.Count
+                        if (dsSanPham[i] != null)
+                        {
+                            var userForm = new FrmSanPhamItem(dsSanPham[i]);
+                            LayoutHienThiSanPham.Controls.Add(userForm);
+                        }
+                    }
+                }
+              
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi ở đây: " + ex);
             }
+
         }
 
 
@@ -48,8 +80,11 @@ namespace MuaBanSanPhamSen_BabyLotus
 
         private void btnSau_Click(object sender, EventArgs e)
         {
-            if (pageNow == 0) return;
+            if (pageNow <=1) return;
             pageNow--;
+            loadSanPham();
+            lbCountPage.Text = pageNow + "/" + countPage;
+
         }
 
         private void CBBTrang_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +114,14 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             if(pageNow == countPage) return;
             pageNow++;
+            loadSanPham();
+            lbCountPage.Text = pageNow+ "/" + countPage;
+
+        }
+
+        private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

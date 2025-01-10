@@ -37,7 +37,7 @@
             this.btnTruoc = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbCountPage = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -172,7 +172,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.Controls.Add(this.label1);
+            this.guna2Panel4.Controls.Add(this.lbCountPage);
             this.guna2Panel4.Controls.Add(this.btnSau);
             this.guna2Panel4.Controls.Add(this.btnTruoc);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -180,16 +180,17 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(633, 76);
             this.guna2Panel4.TabIndex = 5;
+            this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
-            // label1
+            // lbCountPage
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "1/2";
+            this.lbCountPage.AutoSize = true;
+            this.lbCountPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountPage.Location = new System.Drawing.Point(120, 26);
+            this.lbCountPage.Name = "lbCountPage";
+            this.lbCountPage.Size = new System.Drawing.Size(40, 24);
+            this.lbCountPage.TabIndex = 3;
+            this.lbCountPage.Text = "1/2";
             // 
             // FrmHomeAdmin
             // 
@@ -219,6 +220,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSau;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCountPage;
     }
 }

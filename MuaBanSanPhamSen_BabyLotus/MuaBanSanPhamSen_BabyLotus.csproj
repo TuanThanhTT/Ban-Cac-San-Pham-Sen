@@ -81,6 +81,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuaBanCacSanPhamTuSenDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +178,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +254,7 @@
   <ItemGroup>
     <Folder Include="Image\" />
     <Folder Include="Models\" />
+    <Folder Include="Page\userPage\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>

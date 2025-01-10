@@ -155,5 +155,10 @@ namespace MuaBanSanPhamSen_BabyLotus
             var form = new FrmThongKe();
             addTabPage(tabMain, form);
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
