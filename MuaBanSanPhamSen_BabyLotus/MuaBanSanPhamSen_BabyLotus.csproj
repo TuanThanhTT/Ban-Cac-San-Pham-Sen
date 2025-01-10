@@ -131,6 +131,12 @@
     <Compile Include="Page\FrmTaiKhoan.Designer.cs">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\FrmThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmThongKe.Designer.cs">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\FrmUploadAnhSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmThongKe.resx">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmUploadAnhSanPham.resx">
       <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>

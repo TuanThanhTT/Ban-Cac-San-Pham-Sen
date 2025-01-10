@@ -29,3 +29,4 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\Mu
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmQuanLyKhachHang.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmTaiKhoan.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmHoaDon.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmThongKe.resources

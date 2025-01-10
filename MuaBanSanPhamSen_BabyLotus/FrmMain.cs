@@ -108,7 +108,7 @@ namespace MuaBanSanPhamSen_BabyLotus
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            updateBoder(btnSanPham);
+            updateBoder(btnNhaCungCap);
             addTabMain();
             var form = new FrmNhaCungCap();
             addTabPage(tabMain, form);
@@ -146,7 +146,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnThongKe);
             addTabMain();
-            var form = new FrmTaiKhoan();
+            var form = new FrmThongKe();
             addTabPage(tabMain, form);
         }
     }
