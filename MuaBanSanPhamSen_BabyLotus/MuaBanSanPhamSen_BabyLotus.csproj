@@ -69,6 +69,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHomeAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmHomeAdmin.Designer.cs">
+      <DependentUpon>FrmHomeAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="Page\FrmSanPham.Designer.cs">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\FrmSanPhamItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmSanPhamItem.Designer.cs">
+      <DependentUpon>FrmSanPhamItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\FrmTaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +166,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHomeAdmin.resx">
+      <DependentUpon>FrmHomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmSanPhamItem.resx">
+      <DependentUpon>FrmSanPhamItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>

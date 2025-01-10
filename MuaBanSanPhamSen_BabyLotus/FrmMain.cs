@@ -13,6 +13,9 @@ namespace MuaBanSanPhamSen_BabyLotus
         public FrmMain()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+           
+          // Đảm bảo form luôn ở trên cùng
         }
 
         public void addTabMain()
@@ -68,7 +71,10 @@ namespace MuaBanSanPhamSen_BabyLotus
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            updateBoder(btnHome);  
+            updateBoder(btnHome);
+            addTabMain();
+            var form = new FrmHomeAdmin();
+            addTabPage(tabMain, form);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
