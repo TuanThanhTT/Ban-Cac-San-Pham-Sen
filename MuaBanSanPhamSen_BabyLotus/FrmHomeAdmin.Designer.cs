@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomeAdmin));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtTimSanPham = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnTim = new Guna.UI2.WinForms.Guna2Button();
-            this.LayoutHienThiSanPham = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbCountPage = new System.Windows.Forms.Label();
             this.btnSau = new Guna.UI2.WinForms.Guna2Button();
             this.btnTruoc = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbCountPage = new System.Windows.Forms.Label();
+            this.btnTim = new Guna.UI2.WinForms.Guna2Button();
+            this.txtTimSanPham = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LayoutHienThiSanPham = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -55,15 +56,102 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1531, 76);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2Panel2
+            // guna2Panel4
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.LayoutHienThiSanPham);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 76);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1531, 829);
-            this.guna2Panel2.TabIndex = 1;
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.Controls.Add(this.lbCountPage);
+            this.guna2Panel4.Controls.Add(this.btnSau);
+            this.guna2Panel4.Controls.Add(this.btnTruoc);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(633, 76);
+            this.guna2Panel4.TabIndex = 5;
+            this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
+            // 
+            // lbCountPage
+            // 
+            this.lbCountPage.AutoSize = true;
+            this.lbCountPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountPage.Location = new System.Drawing.Point(120, 26);
+            this.lbCountPage.Name = "lbCountPage";
+            this.lbCountPage.Size = new System.Drawing.Size(40, 24);
+            this.lbCountPage.TabIndex = 3;
+            this.lbCountPage.Text = "1/2";
+            // 
+            // btnSau
+            // 
+            this.btnSau.Animated = true;
+            this.btnSau.BackColor = System.Drawing.Color.Transparent;
+            this.btnSau.BorderRadius = 10;
+            this.btnSau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSau.FillColor = System.Drawing.Color.Red;
+            this.btnSau.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSau.ForeColor = System.Drawing.Color.White;
+            this.btnSau.Image = ((System.Drawing.Image)(resources.GetObject("btnSau.Image")));
+            this.btnSau.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSau.Location = new System.Drawing.Point(32, 16);
+            this.btnSau.Name = "btnSau";
+            this.btnSau.Size = new System.Drawing.Size(65, 45);
+            this.btnSau.TabIndex = 2;
+            this.btnSau.UseTransparentBackground = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
+            // 
+            // btnTruoc
+            // 
+            this.btnTruoc.Animated = true;
+            this.btnTruoc.BackColor = System.Drawing.Color.Transparent;
+            this.btnTruoc.BorderRadius = 10;
+            this.btnTruoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTruoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTruoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTruoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTruoc.FillColor = System.Drawing.Color.Red;
+            this.btnTruoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTruoc.ForeColor = System.Drawing.Color.White;
+            this.btnTruoc.Image = ((System.Drawing.Image)(resources.GetObject("btnTruoc.Image")));
+            this.btnTruoc.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnTruoc.Location = new System.Drawing.Point(189, 16);
+            this.btnTruoc.Name = "btnTruoc";
+            this.btnTruoc.Size = new System.Drawing.Size(63, 45);
+            this.btnTruoc.TabIndex = 2;
+            this.btnTruoc.UseTransparentBackground = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.Controls.Add(this.btnTim);
+            this.guna2Panel3.Controls.Add(this.txtTimSanPham);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel3.Location = new System.Drawing.Point(633, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(898, 76);
+            this.guna2Panel3.TabIndex = 4;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Animated = true;
+            this.btnTim.BackColor = System.Drawing.Color.Transparent;
+            this.btnTim.BorderRadius = 10;
+            this.btnTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTim.FillColor = System.Drawing.Color.Teal;
+            this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
+            this.btnTim.Location = new System.Drawing.Point(686, 8);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(100, 53);
+            this.btnTim.TabIndex = 1;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseTransparentBackground = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtTimSanPham
             // 
@@ -89,24 +177,15 @@
             this.txtTimSanPham.Size = new System.Drawing.Size(666, 53);
             this.txtTimSanPham.TabIndex = 0;
             // 
-            // btnTim
+            // guna2Panel2
             // 
-            this.btnTim.Animated = true;
-            this.btnTim.BackColor = System.Drawing.Color.Transparent;
-            this.btnTim.BorderRadius = 10;
-            this.btnTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTim.FillColor = System.Drawing.Color.Teal;
-            this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(686, 8);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(100, 53);
-            this.btnTim.TabIndex = 1;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseTransparentBackground = true;
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.LayoutHienThiSanPham);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 76);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1531, 829);
+            this.guna2Panel2.TabIndex = 1;
             // 
             // LayoutHienThiSanPham
             // 
@@ -118,80 +197,6 @@
             this.LayoutHienThiSanPham.TabIndex = 0;
             this.LayoutHienThiSanPham.Paint += new System.Windows.Forms.PaintEventHandler(this.LayoutHienThiSanPham_Paint);
             // 
-            // btnSau
-            // 
-            this.btnSau.Animated = true;
-            this.btnSau.BackColor = System.Drawing.Color.Transparent;
-            this.btnSau.BorderRadius = 10;
-            this.btnSau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSau.FillColor = System.Drawing.Color.Red;
-            this.btnSau.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSau.ForeColor = System.Drawing.Color.White;
-            this.btnSau.Location = new System.Drawing.Point(192, 16);
-            this.btnSau.Name = "btnSau";
-            this.btnSau.Size = new System.Drawing.Size(95, 45);
-            this.btnSau.TabIndex = 2;
-            this.btnSau.Text = "Trước";
-            this.btnSau.UseTransparentBackground = true;
-            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
-            // 
-            // btnTruoc
-            // 
-            this.btnTruoc.Animated = true;
-            this.btnTruoc.BackColor = System.Drawing.Color.Transparent;
-            this.btnTruoc.BorderRadius = 10;
-            this.btnTruoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTruoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTruoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTruoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTruoc.FillColor = System.Drawing.Color.Red;
-            this.btnTruoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTruoc.ForeColor = System.Drawing.Color.White;
-            this.btnTruoc.Location = new System.Drawing.Point(3, 16);
-            this.btnTruoc.Name = "btnTruoc";
-            this.btnTruoc.Size = new System.Drawing.Size(95, 45);
-            this.btnTruoc.TabIndex = 2;
-            this.btnTruoc.Text = "Sau";
-            this.btnTruoc.UseTransparentBackground = true;
-            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel3.Controls.Add(this.btnTim);
-            this.guna2Panel3.Controls.Add(this.txtTimSanPham);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel3.Location = new System.Drawing.Point(633, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(898, 76);
-            this.guna2Panel3.TabIndex = 4;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.Controls.Add(this.lbCountPage);
-            this.guna2Panel4.Controls.Add(this.btnSau);
-            this.guna2Panel4.Controls.Add(this.btnTruoc);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(633, 76);
-            this.guna2Panel4.TabIndex = 5;
-            this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
-            // 
-            // lbCountPage
-            // 
-            this.lbCountPage.AutoSize = true;
-            this.lbCountPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountPage.Location = new System.Drawing.Point(120, 26);
-            this.lbCountPage.Name = "lbCountPage";
-            this.lbCountPage.Size = new System.Drawing.Size(40, 24);
-            this.lbCountPage.TabIndex = 3;
-            this.lbCountPage.Text = "1/2";
-            // 
             // FrmHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,10 +206,10 @@
             this.Name = "FrmHomeAdmin";
             this.Size = new System.Drawing.Size(1531, 905);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

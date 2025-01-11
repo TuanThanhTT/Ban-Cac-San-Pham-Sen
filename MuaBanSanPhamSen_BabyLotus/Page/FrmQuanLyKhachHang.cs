@@ -2,7 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,12 +28,13 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             {
                 DataTable data = new DataTable();
                 data.Columns.Add("Id", typeof(int));
-                data.Columns.Add("Ten", typeof(string));
-                data.Columns.Add("Email", typeof(int));
-                data.Columns.Add("Phone", typeof(int));
-                data.Columns.Add("Gender", typeof(int));
-                data.Columns.Add("DiaChi", typeof(Decimal));
+                data.Columns.Add("Name", typeof(string));
+                data.Columns.Add("Email", typeof(string));
+                data.Columns.Add("Phone", typeof(string));
+                data.Columns.Add("Gender", typeof(string));
+                data.Columns.Add("DiaChi", typeof(string));
 
+                GVKhachHang.DataSource = null;
 
                 var ds = await getDanhSachUser();
                 if (ds != null)
@@ -59,13 +65,13 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 DataTable data = new DataTable();
                 data.Columns.Add("Id", typeof(int));
                 data.Columns.Add("Name", typeof(string));
-                data.Columns.Add("Email", typeof(int));
-                data.Columns.Add("Phone", typeof(int));
-                data.Columns.Add("Gender", typeof(int));
-                data.Columns.Add("DiaChi", typeof(Decimal));
+                data.Columns.Add("Email", typeof(string));
+                data.Columns.Add("Phone", typeof(string));
+                data.Columns.Add("Gender", typeof(string));
+                data.Columns.Add("DiaChi", typeof(string));
 
 
-
+               
                 var ds = dsTim;
                 if (ds != null)
                 {
@@ -78,6 +84,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
                     }
                     GVKhachHang.DataSource = data;
+                    MessageBox.Show("co load");
                 }
 
 
@@ -142,6 +149,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             try
             {
                 var selected = GVKhachHang.CurrentCell.RowIndex;
+              
                 var maKH = GVKhachHang.Rows[selected].Cells[0].Value.ToString();
                 var tenKH = GVKhachHang.Rows[selected].Cells[1].Value.ToString();
                 var email = (GVKhachHang.Rows[selected].Cells[2].Value.ToString());
@@ -156,7 +164,44 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 txtTenKH.Text = tenKH;
                 txtEmail.Text = email;
                 txtGioiTinh.Text = gioiTinh;
-                
+
+                txtHoaDon.Text = "0";
+                txtThanhTien.Text = "0";
+                using(var context = new BanSanPhamSen())
+                {
+                    var acc = context.Account.Where(op=>op.UserAccountId.ToString() == maKH).FirstOrDefault();  
+                    if (acc != null)
+                    {
+                        txtUserName.Text = acc.username;
+                        if(!string.IsNullOrEmpty(acc.avartar))
+                        {
+                            string img = acc.avartar.Trim();
+                            string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Upload", Path.GetFileNameWithoutExtension(img) + "_" + DateTime.Now.Ticks + Path.GetExtension(img));
+
+                            if (File.Exists(destFile))
+                            {
+                               
+                                    // Dọn dẹp hình ảnh cũ nếu có
+                                    if (txtAvartar.Image != null)
+                                    {
+                                    txtAvartar.Image.Dispose();
+                                    txtAvartar.Image = null;
+                                    }
+
+                                // Tải và hiển thị hình ảnh mới
+                                txtAvartar.Image = Image.FromFile(destFile);
+                                txtAvartar.SizeMode = PictureBoxSizeMode.StretchImage; // Co giãn hình ảnh
+                                
+                            }
+                          
+                            
+                          
+
+
+
+                        }
+                    }
+                }
 
               
 
@@ -164,7 +209,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -181,10 +226,15 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
                 using(var context = new BanSanPhamSen())
                 {
-                    var sanPham = context.Users.Find(Convert.ToInt32(maKH));
-                    if (sanPham != null)
+                    var user = context.Users.Find(Convert.ToInt32(maKH));
+                    if (user != null)
                     {
-                        sanPham.IsDelete= true;
+                        user.IsDelete= true;
+                        var acc = context.Account.Where(op=>op.UserAccountId.ToString() == user.UserId.ToString() ).FirstOrDefault();
+                        if(acc != null)
+                        {
+                            acc.IsLocked= true;
+                        } 
                         context.SaveChanges();
                         loadTableKhachHang();
                         clear();
@@ -212,7 +262,211 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             txtTenKH.Text = "";
             txtTim.Text = "";
             txtThanhTien.Text = "";
-          
+
+            if (txtAvartar.Image != null)
+            {
+              
+                txtAvartar.Image = null;
+                string fileName = "z6047182807262_7ebb469de6142223ea29ad16e467d8bf.jpg";
+                string destFile = Path.Combine(Directory.GetCurrentDirectory(),"Image", Path.GetFileName(fileName));
+
+                if (File.Exists(destFile))
+                {
+                
+                    txtAvartar.Image = Image.FromFile(destFile);
+                    txtAvartar.SizeMode = PictureBoxSizeMode.StretchImage;
+                    txtAvartar.Visible = true;
+
+                }
+
+            }
+            loadTableKhachHang();
+        }
+
+        private void GVKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void btnTim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string chuoiTim = txtTim.Text;  
+                if(!string.IsNullOrEmpty(chuoiTim))
+                {
+                    var ds = await getDanhSachNguoiDung(chuoiTim);
+
+                    
+                    loadTableKhachHangBangDanhSach(ds); 
+                    
+
+                }
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex+"");
+            }
+
+        }
+
+
+        static bool SoSanhChuoi(string a, string b)
+        {
+            try
+            {
+                // Loại bỏ dấu và chuyển về chữ thường
+                string aKhongDau = LoaiBoDau(a).ToLower();
+                string bKhongDau = LoaiBoDau(b).ToLower();
+
+
+
+
+                if (!aKhongDau.Contains(bKhongDau))
+                {
+                    return false; // Nếu bất kỳ từ nào không khớp, trả về false
+                }
+
+                return true; // Tất cả từ đều khớp
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<User>>getDanhSachNguoiDung(string chuoiTim)
+        {
+            var dsTim = new List<User>();   
+
+            try
+            {
+                using (var context = new BanSanPhamSen())
+                {
+                    int id = -1;
+                    if (int.TryParse(chuoiTim, out id))
+                    {
+                        id = int.Parse(chuoiTim);
+                    }
+                    else
+                    {
+                        id = -1;
+                    }
+                    if (id != -1)
+                    {
+                        var user = await context.Users.FindAsync(id);
+                        if (user != null)
+                        {
+                            dsTim.Add(user);
+                            return dsTim;
+                        }
+                    }
+                    else
+                    {
+                        var ds = context.Users.Where(op=>op.IsDelete == false).ToList();
+                        
+                        foreach(var i in ds)
+                        {
+                            if(SoSanhChuoi(i.FullName, chuoiTim))
+                            {
+                                dsTim.Add(i);   
+                            }
+                        }
+                        return dsTim;
+                    }
+
+                }
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            return dsTim;
+        }
+
+
+        static string LoaiBoDau(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+
+            // Chuẩn hóa chuỗi và loại bỏ các dấu
+            string normalized = input.Normalize(NormalizationForm.FormD);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in normalized)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(c);
+                }
+            }
+
+            // Trả về chuỗi không dấu
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+     
+
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            clear();
+
+        }
+
+        private  void btnDanhSachKhoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ds =  getDanhSachNguoiDungBiKhoa();
+                MessageBox.Show("so luong khoa: " + ds.Count);
+               
+                loadTableKhachHangBangDanhSach(ds);
+                txtKhoaTaiKhoan.Visible = false;
+                btnMoKhoa.Visible = true;    
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        public  List<User> getDanhSachNguoiDungBiKhoa()
+        {
+            using (var context = new BanSanPhamSen())
+            {
+                return  context.Users.Where(op => op.IsDelete == true).ToList();
+            }
+        }
+
+        private async void btnMoKhoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using(var context = new BanSanPhamSen())
+                {
+                    var ds = await context.Users.ToListAsync();
+                    foreach(var item in ds)
+                    {
+                        if(item.IsDelete)
+                            item.IsDelete= false;
+                            var acc =  context.Account.Where(op => op.UserAccountId.ToString() == item.UserId.ToString()).FirstOrDefault();
+                            acc.IsLocked= false;
+                    }
+               
+                    await context.SaveChangesAsync();
+                    MessageBox.Show("Mở khóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                    loadTableKhachHang();
+                    btnMoKhoa.Visible = false;
+                    txtKhoaTaiKhoan.Visible = true;
+                }
+                                     
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

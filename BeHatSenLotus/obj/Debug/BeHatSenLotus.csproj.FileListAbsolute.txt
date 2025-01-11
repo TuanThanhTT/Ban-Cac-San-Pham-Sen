@@ -17,3 +17,4 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.M
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactory.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updatedeleteCate.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactoryIssdelete.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updataAccountTable.resources

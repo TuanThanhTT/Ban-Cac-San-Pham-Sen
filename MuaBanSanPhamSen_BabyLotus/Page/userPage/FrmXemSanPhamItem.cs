@@ -23,7 +23,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             try
             {
                 if(product != null) {
-                    MessageBox.Show("ko  nulll");
+                
                     GroupTitle.Text = product.productName;
                     lbPrice.Text = product.price + "vnđ";
 

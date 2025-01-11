@@ -47,7 +47,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 			{
 				if(!string.IsNullOrEmpty(filePaths))
 				{
-					string[] listFile = this.filePaths.Split(';').ToArray();
+					string[] listFile = this.filePaths.Trim().Split(';').ToArray();
 					if(listFile.Length > 0 ) {
 
 						

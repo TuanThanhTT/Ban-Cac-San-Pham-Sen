@@ -1,10 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeHatSenLotus.Model
 {
@@ -18,6 +13,7 @@ namespace BeHatSenLotus.Model
      
         public int? EmployAccountId { get; set; }  
         public int? UserAccountId { get; set; }    
+        public string avartar { get; set; }
         public virtual Employee employee { get; set; }
         public virtual User user { get; set; }
         public virtual ICollection<AccountPermisstion> AccountPermisstions { get; set; }

@@ -31,13 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSanPhamItem));
             this.GBTenSanPham = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.PTBImg = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbGiaBan = new System.Windows.Forms.Label();
             this.GBTenSanPham.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBImg)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +44,6 @@
             // 
             this.GBTenSanPham.BackColor = System.Drawing.Color.Transparent;
             this.GBTenSanPham.BorderColor = System.Drawing.Color.Black;
-            this.GBTenSanPham.BorderRadius = 10;
             this.GBTenSanPham.BorderThickness = 3;
             this.GBTenSanPham.Controls.Add(this.guna2GradientPanel1);
             this.GBTenSanPham.CustomBorderColor = System.Drawing.Color.Transparent;
@@ -64,34 +61,23 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientPanel1.Controls.Add(this.guna2Panel2);
+            this.guna2GradientPanel1.Controls.Add(this.PTBImg);
             this.guna2GradientPanel1.Controls.Add(this.guna2Panel1);
-            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 40);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(3, 40);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(270, 330);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(264, 330);
             this.guna2GradientPanel1.TabIndex = 0;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Controls.Add(this.PTBImg);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(270, 280);
-            this.guna2Panel2.TabIndex = 1;
             // 
             // PTBImg
             // 
-            this.PTBImg.BorderRadius = 10;
+            this.PTBImg.BackColor = System.Drawing.Color.Transparent;
             this.PTBImg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PTBImg.Image = ((System.Drawing.Image)(resources.GetObject("PTBImg.Image")));
             this.PTBImg.ImageRotate = 0F;
             this.PTBImg.Location = new System.Drawing.Point(0, 0);
             this.PTBImg.Name = "PTBImg";
-            this.PTBImg.Size = new System.Drawing.Size(270, 280);
+            this.PTBImg.Size = new System.Drawing.Size(264, 280);
             this.PTBImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTBImg.TabIndex = 0;
             this.PTBImg.TabStop = false;
@@ -105,7 +91,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 280);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(270, 50);
+            this.guna2Panel1.Size = new System.Drawing.Size(264, 50);
             this.guna2Panel1.TabIndex = 0;
             // 
             // lbGiaBan
@@ -126,7 +112,6 @@
             this.Size = new System.Drawing.Size(270, 370);
             this.GBTenSanPham.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PTBImg)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -138,7 +123,6 @@
 
         private Guna.UI2.WinForms.Guna2GroupBox GBTenSanPham;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox PTBImg;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lbGiaBan;

@@ -165,5 +165,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 			}
 			
 		}
-	}
+
+        private void layoutImgs_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }
