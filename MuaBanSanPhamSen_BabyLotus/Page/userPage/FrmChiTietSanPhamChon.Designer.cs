@@ -250,6 +250,8 @@
             this.btnMuangay.FillColor = System.Drawing.Color.Red;
             this.btnMuangay.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnMuangay.ForeColor = System.Drawing.Color.White;
+            this.btnMuangay.Image = ((System.Drawing.Image)(resources.GetObject("btnMuangay.Image")));
+            this.btnMuangay.ImageSize = new System.Drawing.Size(30, 30);
             this.btnMuangay.Location = new System.Drawing.Point(686, 215);
             this.btnMuangay.Name = "btnMuangay";
             this.btnMuangay.Size = new System.Drawing.Size(227, 45);
@@ -306,6 +308,7 @@
             // NBRSOLuongMua
             // 
             this.NBRSOLuongMua.BackColor = System.Drawing.Color.Transparent;
+            this.NBRSOLuongMua.BorderRadius = 10;
             this.NBRSOLuongMua.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NBRSOLuongMua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NBRSOLuongMua.Location = new System.Drawing.Point(766, 128);

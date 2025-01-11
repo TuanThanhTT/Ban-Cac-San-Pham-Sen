@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXemSanPhamMua));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,15 +38,9 @@
             this.btnSau = new Guna.UI2.WinForms.Guna2Button();
             this.btnTruoc = new Guna.UI2.WinForms.Guna2Button();
             this.LbPage = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.LayoutSanPham = new System.Windows.Forms.FlowLayoutPanel();
-            this.PTBImgs = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PTBImgs)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -68,7 +63,6 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
-            this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 70);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -112,6 +106,7 @@
             this.btnTim.FillColor = System.Drawing.Color.Red;
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.Location = new System.Drawing.Point(371, 10);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(77, 45);
@@ -149,6 +144,7 @@
             this.btnLoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnLoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnLoc.ForeColor = System.Drawing.Color.White;
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
             this.btnLoc.Location = new System.Drawing.Point(879, 15);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(77, 45);
@@ -169,11 +165,12 @@
             this.btnSau.FillColor = System.Drawing.Color.Red;
             this.btnSau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSau.ForeColor = System.Drawing.Color.White;
-            this.btnSau.Location = new System.Drawing.Point(1180, 15);
+            this.btnSau.Image = ((System.Drawing.Image)(resources.GetObject("btnSau.Image")));
+            this.btnSau.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSau.Location = new System.Drawing.Point(1332, 15);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(77, 45);
             this.btnSau.TabIndex = 1;
-            this.btnSau.Text = "sau";
             this.btnSau.UseTransparentBackground = true;
             this.btnSau.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -189,11 +186,12 @@
             this.btnTruoc.FillColor = System.Drawing.Color.Red;
             this.btnTruoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnTruoc.ForeColor = System.Drawing.Color.White;
-            this.btnTruoc.Location = new System.Drawing.Point(1335, 15);
+            this.btnTruoc.Image = ((System.Drawing.Image)(resources.GetObject("btnTruoc.Image")));
+            this.btnTruoc.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnTruoc.Location = new System.Drawing.Point(1180, 15);
             this.btnTruoc.Name = "btnTruoc";
             this.btnTruoc.Size = new System.Drawing.Size(77, 45);
             this.btnTruoc.TabIndex = 1;
-            this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseTransparentBackground = true;
             this.btnTruoc.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -207,46 +205,15 @@
             this.LbPage.TabIndex = 3;
             this.LbPage.Text = "1/2";
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel3.Controls.Add(this.PTBImgs);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1531, 149);
-            this.guna2Panel3.TabIndex = 0;
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
-            this.guna2Panel4.Controls.Add(this.LayoutSanPham);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 149);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(1531, 686);
+            this.guna2Panel4.Size = new System.Drawing.Size(1531, 835);
             this.guna2Panel4.TabIndex = 1;
-            // 
-            // LayoutSanPham
-            // 
-            this.LayoutSanPham.AutoScroll = true;
-            this.LayoutSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LayoutSanPham.Location = new System.Drawing.Point(0, 0);
-            this.LayoutSanPham.Name = "LayoutSanPham";
-            this.LayoutSanPham.Size = new System.Drawing.Size(1531, 686);
-            this.LayoutSanPham.TabIndex = 0;
-            // 
-            // PTBImgs
-            // 
-            this.PTBImgs.BackColor = System.Drawing.Color.Transparent;
-            this.PTBImgs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PTBImgs.FillColor = System.Drawing.Color.Silver;
-            this.PTBImgs.ImageRotate = 0F;
-            this.PTBImgs.Location = new System.Drawing.Point(0, 0);
-            this.PTBImgs.Name = "PTBImgs";
-            this.PTBImgs.Size = new System.Drawing.Size(1531, 149);
-            this.PTBImgs.TabIndex = 0;
-            this.PTBImgs.TabStop = false;
+            this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
             // FrmXemSanPhamMua
             // 
@@ -259,9 +226,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PTBImgs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,8 +242,5 @@
         private Guna.UI2.WinForms.Guna2Button btnTruoc;
         private Guna.UI2.WinForms.Guna2Button btnSau;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.FlowLayoutPanel LayoutSanPham;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2PictureBox PTBImgs;
     }
 }

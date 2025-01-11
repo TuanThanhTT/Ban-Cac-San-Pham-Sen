@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinTaiKhoan));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbAcountId = new System.Windows.Forms.Label();
@@ -321,8 +322,10 @@
             this.btnDoiPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDoiPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDoiPass.FillColor = System.Drawing.Color.Black;
-            this.btnDoiPass.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiPass.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnDoiPass.ForeColor = System.Drawing.Color.White;
+            this.btnDoiPass.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiPass.Image")));
+            this.btnDoiPass.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDoiPass.Location = new System.Drawing.Point(281, 304);
             this.btnDoiPass.Name = "btnDoiPass";
             this.btnDoiPass.Size = new System.Drawing.Size(248, 44);
@@ -456,7 +459,7 @@
             this.CbHienPass.CheckedState.BorderRadius = 0;
             this.CbHienPass.CheckedState.BorderThickness = 0;
             this.CbHienPass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CbHienPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbHienPass.Font = new System.Drawing.Font("Tahoma", 9F);
             this.CbHienPass.ForeColor = System.Drawing.Color.Black;
             this.CbHienPass.Location = new System.Drawing.Point(284, 263);
             this.CbHienPass.Name = "CbHienPass";
@@ -466,7 +469,7 @@
             this.CbHienPass.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.CbHienPass.UncheckedState.BorderRadius = 0;
             this.CbHienPass.UncheckedState.BorderThickness = 0;
-            this.CbHienPass.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CbHienPass.UncheckedState.FillColor = System.Drawing.Color.White;
             // 
             // txtEditHoten
             // 
@@ -668,6 +671,8 @@
             this.btnLuuThongTin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLuuThongTin.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLuuThongTin.ForeColor = System.Drawing.Color.White;
+            this.btnLuuThongTin.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuThongTin.Image")));
+            this.btnLuuThongTin.ImageSize = new System.Drawing.Size(30, 30);
             this.btnLuuThongTin.Location = new System.Drawing.Point(57, 325);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
             this.btnLuuThongTin.Size = new System.Drawing.Size(248, 44);
@@ -711,6 +716,7 @@
             this.btnDoiAnh.FillColor = System.Drawing.Color.Black;
             this.btnDoiAnh.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiAnh.ForeColor = System.Drawing.Color.White;
+            this.btnDoiAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiAnh.Image")));
             this.btnDoiAnh.Location = new System.Drawing.Point(38, 229);
             this.btnDoiAnh.Name = "btnDoiAnh";
             this.btnDoiAnh.Size = new System.Drawing.Size(151, 44);

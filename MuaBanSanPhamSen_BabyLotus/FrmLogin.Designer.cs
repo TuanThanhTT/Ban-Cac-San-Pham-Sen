@@ -162,6 +162,7 @@
             // 
             // btnDangNhap
             // 
+            this.btnDangNhap.Animated = true;
             this.btnDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.btnDangNhap.BorderRadius = 10;
             this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;

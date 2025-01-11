@@ -16,6 +16,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
         {
             InitializeComponent();
             setCountPage();
+            
            
         }
 

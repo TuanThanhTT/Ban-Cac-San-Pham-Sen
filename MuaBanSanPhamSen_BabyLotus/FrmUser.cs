@@ -14,6 +14,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            this.Text = "Bé Hạt Sen Baby Lotus";           
         }
 
         public void addTabMain()
