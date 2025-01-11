@@ -28,10 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.GroupTenSanPham = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.PTBAnhSanPham = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.GroupTenSanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBAnhSanPham)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // GroupTenSanPham
+            // 
+            this.GroupTenSanPham.Controls.Add(this.PTBAnhSanPham);
+            this.GroupTenSanPham.CustomBorderColor = System.Drawing.Color.Teal;
+            this.GroupTenSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GroupTenSanPham.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupTenSanPham.ForeColor = System.Drawing.Color.White;
+            this.GroupTenSanPham.Location = new System.Drawing.Point(0, 0);
+            this.GroupTenSanPham.Name = "GroupTenSanPham";
+            this.GroupTenSanPham.Size = new System.Drawing.Size(170, 210);
+            this.GroupTenSanPham.TabIndex = 0;
+            this.GroupTenSanPham.Text = "Tên sản phẩm";
+            // 
+            // PTBAnhSanPham
+            // 
+            this.PTBAnhSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PTBAnhSanPham.ImageRotate = 0F;
+            this.PTBAnhSanPham.Location = new System.Drawing.Point(0, 40);
+            this.PTBAnhSanPham.Name = "PTBAnhSanPham";
+            this.PTBAnhSanPham.Size = new System.Drawing.Size(170, 170);
+            this.PTBAnhSanPham.TabIndex = 0;
+            this.PTBAnhSanPham.TabStop = false;
+            // 
+            // FrmSanPhamTuongTu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.GroupTenSanPham);
+            this.Name = "FrmSanPhamTuongTu";
+            this.Size = new System.Drawing.Size(170, 210);
+            this.GroupTenSanPham.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PTBAnhSanPham)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2GroupBox GroupTenSanPham;
+        private Guna.UI2.WinForms.Guna2PictureBox PTBAnhSanPham;
     }
 }

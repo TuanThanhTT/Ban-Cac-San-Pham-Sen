@@ -18,7 +18,7 @@ namespace MuaBanSanPhamSen_BabyLotus
             //}
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmUser());
+            Application.Run(new FrmDangKy());
         }
     }
 }

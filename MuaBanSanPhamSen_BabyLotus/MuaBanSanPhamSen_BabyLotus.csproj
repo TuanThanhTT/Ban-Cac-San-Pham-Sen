@@ -69,11 +69,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDangKy.Designer.cs">
+      <DependentUpon>FrmDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomeAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmHomeAdmin.Designer.cs">
       <DependentUpon>FrmHomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -161,6 +173,12 @@
     <Compile Include="Page\FrmUploadAnhSanPham.Designer.cs">
       <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\userPage\FrmChiTietSanPhamChon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmChiTietSanPhamChon.Designer.cs">
+      <DependentUpon>FrmChiTietSanPhamChon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\userPage\FrmDonHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +190,12 @@
     </Compile>
     <Compile Include="Page\userPage\FrmHomeUser.Designer.cs">
       <DependentUpon>FrmHomeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmSanPhamTuongTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmSanPhamTuongTu.Designer.cs">
+      <DependentUpon>FrmSanPhamTuongTu.cs</DependentUpon>
     </Compile>
     <Compile Include="Page\userPage\FrmThongTinTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -208,8 +232,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDangKy.resx">
+      <DependentUpon>FrmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHomeAdmin.resx">
       <DependentUpon>FrmHomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -250,11 +280,17 @@
     <EmbeddedResource Include="Page\FrmUploadAnhSanPham.resx">
       <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmChiTietSanPhamChon.resx">
+      <DependentUpon>FrmChiTietSanPhamChon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\userPage\FrmDonHang.resx">
       <DependentUpon>FrmDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\userPage\FrmHomeUser.resx">
       <DependentUpon>FrmHomeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmSanPhamTuongTu.resx">
+      <DependentUpon>FrmSanPhamTuongTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\userPage\FrmThongTinTaiKhoan.resx">
       <DependentUpon>FrmThongTinTaiKhoan.cs</DependentUpon>
