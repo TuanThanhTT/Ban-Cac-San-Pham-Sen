@@ -1,7 +1,9 @@
-﻿using Guna.UI2.WinForms;
+﻿using BeHatSenLotus.Model;
+using Guna.UI2.WinForms;
 using MuaBanSanPhamSen_BabyLotus.Page.userPage;
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -10,12 +12,61 @@ namespace MuaBanSanPhamSen_BabyLotus
     {
         private Guna2Button currentBtn;
         private CustomTabControl tabMain;
-        public FrmUser()
+        private Account account;
+        private User user;
+        public FrmUser(Account acc)
         {
+            account= acc;   
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            this.Text = "Bé Hạt Sen Baby Lotus";           
+            this.Text = "Bé Hạt Sen Baby Lotus";
+            setUpForm();
         }
+
+
+        public async void setUpForm()
+        {
+            try
+            {
+
+                if (account != null)
+                {
+
+                    if (await getUsser() != null)
+                    {
+                        user = await getUsser();
+                        lbHello.Text = user.FullName;
+                    }
+                }
+
+
+            }catch(Exception ex) {
+                MessageBox.Show("Lỗi: "+ex.Message, "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public async Task<User> getUsser()
+        {
+            try
+            {
+                using(var context = new BanSanPhamSen())
+                {
+
+                    int id = -1;
+                    if (account.UserAccountId != null)
+                    {
+                        id = Convert.ToInt32(account.UserAccountId);
+                    }
+
+                    var user = await context.Users.FindAsync(id); 
+                    return user;
+                }
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
+
 
         public void addTabMain()
         {
