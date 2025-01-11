@@ -161,6 +161,42 @@
     <Compile Include="Page\FrmUploadAnhSanPham.Designer.cs">
       <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\userPage\FrmDonHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmDonHang.Designer.cs">
+      <DependentUpon>FrmDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmHomeUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmHomeUser.Designer.cs">
+      <DependentUpon>FrmHomeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmThongTinTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>FrmThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmXemSanPhamItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmXemSanPhamItem.Designer.cs">
+      <DependentUpon>FrmXemSanPhamItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmXemSanPhamMua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmXemSanPhamMua.Designer.cs">
+      <DependentUpon>FrmXemSanPhamMua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\IconDonHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\IconDonHang.Designer.cs">
+      <DependentUpon>IconDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\XemAnhSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +250,24 @@
     <EmbeddedResource Include="Page\FrmUploadAnhSanPham.resx">
       <DependentUpon>FrmUploadAnhSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmDonHang.resx">
+      <DependentUpon>FrmDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmHomeUser.resx">
+      <DependentUpon>FrmHomeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmThongTinTaiKhoan.resx">
+      <DependentUpon>FrmThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmXemSanPhamItem.resx">
+      <DependentUpon>FrmXemSanPhamItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmXemSanPhamMua.resx">
+      <DependentUpon>FrmXemSanPhamMua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\IconDonHang.resx">
+      <DependentUpon>IconDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\XemAnhSanPham.resx">
       <DependentUpon>XemAnhSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,7 +308,6 @@
   <ItemGroup>
     <Folder Include="Image\" />
     <Folder Include="Models\" />
-    <Folder Include="Page\userPage\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>

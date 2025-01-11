@@ -1,5 +1,5 @@
 ﻿using Guna.UI2.WinForms;
-using MuaBanSanPhamSen_BabyLotus.Page;
+using MuaBanSanPhamSen_BabyLotus.Page.userPage;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -71,7 +71,31 @@ namespace MuaBanSanPhamSen_BabyLotus
 
             updateBoder(btnHome);
             addTabMain();
-            var form = new FrmNhanVien();
+            var form = new FrmHomeUser();
+            addTabPage(tabMain, form);
+        }
+
+        private void btnDonHang_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnDonHang);
+            addTabMain();
+            var form = new FrmDonHang();
+            addTabPage(tabMain, form);
+        }
+
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnLichSu);
+            addTabMain();
+            var form = new FrmXemSanPhamMua();
+            addTabPage(tabMain, form);
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnTaiKhoan);
+            addTabMain();
+            var form = new FrmThongTinTaiKhoan();
             addTabPage(tabMain, form);
         }
     }

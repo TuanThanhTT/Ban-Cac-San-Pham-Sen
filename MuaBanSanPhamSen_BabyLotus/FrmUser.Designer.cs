@@ -33,9 +33,7 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnLienHe = new Guna.UI2.WinForms.Guna2Button();
             this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.btnDonHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
@@ -43,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +53,6 @@
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Controls.Add(this.btnThoat);
             this.guna2Panel1.Controls.Add(this.guna2Separator2);
-            this.guna2Panel1.Controls.Add(this.btnLienHe);
             this.guna2Panel1.Controls.Add(this.btnSanPham);
             this.guna2Panel1.Controls.Add(this.btnLichSu);
             this.guna2Panel1.Controls.Add(this.btnTaiKhoan);
@@ -111,32 +109,6 @@
             this.guna2Separator2.Size = new System.Drawing.Size(280, 16);
             this.guna2Separator2.TabIndex = 5;
             // 
-            // btnLienHe
-            // 
-            this.btnLienHe.Animated = true;
-            this.btnLienHe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.btnLienHe.BorderRadius = 10;
-            this.btnLienHe.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.btnLienHe.CheckedState.CustomBorderColor = System.Drawing.Color.White;
-            this.btnLienHe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
-            this.btnLienHe.CustomBorderThickness = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLienHe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLienHe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLienHe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLienHe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLienHe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.btnLienHe.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLienHe.ForeColor = System.Drawing.Color.White;
-            this.btnLienHe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
-            this.btnLienHe.Image = ((System.Drawing.Image)(resources.GetObject("btnLienHe.Image")));
-            this.btnLienHe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLienHe.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLienHe.Location = new System.Drawing.Point(-6, 505);
-            this.btnLienHe.Name = "btnLienHe";
-            this.btnLienHe.Size = new System.Drawing.Size(418, 60);
-            this.btnLienHe.TabIndex = 4;
-            this.btnLienHe.Text = "Liên Hệ";
-            // 
             // btnSanPham
             // 
             this.btnSanPham.Animated = true;
@@ -161,33 +133,7 @@
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Size = new System.Drawing.Size(418, 60);
             this.btnSanPham.TabIndex = 4;
-            this.btnSanPham.Text = "Sản Phẩm";
-            // 
-            // btnLichSu
-            // 
-            this.btnLichSu.Animated = true;
-            this.btnLichSu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.btnLichSu.BorderRadius = 10;
-            this.btnLichSu.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.btnLichSu.CheckedState.CustomBorderColor = System.Drawing.Color.White;
-            this.btnLichSu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
-            this.btnLichSu.CustomBorderThickness = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLichSu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLichSu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLichSu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLichSu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLichSu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.btnLichSu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSu.ForeColor = System.Drawing.Color.White;
-            this.btnLichSu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
-            this.btnLichSu.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSu.Image")));
-            this.btnLichSu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLichSu.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLichSu.Location = new System.Drawing.Point(-6, 377);
-            this.btnLichSu.Name = "btnLichSu";
-            this.btnLichSu.Size = new System.Drawing.Size(418, 60);
-            this.btnLichSu.TabIndex = 4;
-            this.btnLichSu.Text = "Lịch Sử";
+            this.btnSanPham.Text = "Liên Hệ";
             // 
             // btnTaiKhoan
             // 
@@ -214,6 +160,7 @@
             this.btnTaiKhoan.Size = new System.Drawing.Size(418, 60);
             this.btnTaiKhoan.TabIndex = 4;
             this.btnTaiKhoan.Text = "Tài Khoản";
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // btnDonHang
             // 
@@ -240,6 +187,7 @@
             this.btnDonHang.Size = new System.Drawing.Size(418, 60);
             this.btnDonHang.TabIndex = 4;
             this.btnDonHang.Text = "Đơn Hàng";
+            this.btnDonHang.Click += new System.EventHandler(this.btnDonHang_Click);
             // 
             // btnHome
             // 
@@ -306,6 +254,33 @@
             this.mainPanel.Size = new System.Drawing.Size(1101, 905);
             this.mainPanel.TabIndex = 3;
             // 
+            // btnLichSu
+            // 
+            this.btnLichSu.Animated = true;
+            this.btnLichSu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
+            this.btnLichSu.BorderRadius = 10;
+            this.btnLichSu.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnLichSu.CheckedState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnLichSu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
+            this.btnLichSu.CustomBorderThickness = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLichSu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLichSu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLichSu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLichSu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLichSu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
+            this.btnLichSu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichSu.ForeColor = System.Drawing.Color.White;
+            this.btnLichSu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
+            this.btnLichSu.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSu.Image")));
+            this.btnLichSu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLichSu.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLichSu.Location = new System.Drawing.Point(-6, 377);
+            this.btnLichSu.Name = "btnLichSu";
+            this.btnLichSu.Size = new System.Drawing.Size(418, 60);
+            this.btnLichSu.TabIndex = 4;
+            this.btnLichSu.Text = "Sản Phẩm";
+            this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
+            // 
             // FrmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,9 +303,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
-        private Guna.UI2.WinForms.Guna2Button btnLienHe;
         private Guna.UI2.WinForms.Guna2Button btnSanPham;
-        private Guna.UI2.WinForms.Guna2Button btnLichSu;
         private Guna.UI2.WinForms.Guna2Button btnTaiKhoan;
         private Guna.UI2.WinForms.Guna2Button btnDonHang;
         private Guna.UI2.WinForms.Guna2Button btnHome;
@@ -338,5 +311,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel mainPanel;
+        private Guna.UI2.WinForms.Guna2Button btnLichSu;
     }
 }
