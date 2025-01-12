@@ -123,6 +123,7 @@
             // 
             this.PTB_hinhanh.BackColor = System.Drawing.Color.Transparent;
             this.PTB_hinhanh.FillColor = System.Drawing.Color.Silver;
+            this.PTB_hinhanh.Image = ((System.Drawing.Image)(resources.GetObject("PTB_hinhanh.Image")));
             this.PTB_hinhanh.ImageRotate = 0F;
             this.PTB_hinhanh.Location = new System.Drawing.Point(117, 92);
             this.PTB_hinhanh.Name = "PTB_hinhanh";

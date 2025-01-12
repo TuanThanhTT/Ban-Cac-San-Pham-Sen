@@ -354,6 +354,24 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             {
                 clear();
                 LoadTaiKhoan();
+                if(PTB_hinhanh.Image!= null) { 
+                    PTB_hinhanh.Image = null;
+                    string fileName = "z6047182807262_7ebb469de6142223ea29ad16e467d8bf.jpg";
+                    string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Image", Path.GetFileName(fileName));
+
+                    if (File.Exists(destFile))
+                    {
+
+                        PTB_hinhanh.Image = Image.FromFile(destFile);
+                        PTB_hinhanh.SizeMode = PictureBoxSizeMode.StretchImage;
+                        PTB_hinhanh.Visible = true;
+
+                    }
+
+
+
+
+                }
                    
             }catch(Exception ex)
             {

@@ -427,6 +427,7 @@
             this.GVKhachHang.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.GVKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GVKhachHang.CausesValidation = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -436,7 +437,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GVKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GVKhachHang.ColumnHeadersHeight = 40;
-            this.GVKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GVKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -473,7 +473,7 @@
             this.GVKhachHang.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GVKhachHang.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVKhachHang.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.GVKhachHang.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GVKhachHang.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GVKhachHang.ThemeStyle.HeaderStyle.Height = 40;
             this.GVKhachHang.ThemeStyle.ReadOnly = true;
             this.GVKhachHang.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;

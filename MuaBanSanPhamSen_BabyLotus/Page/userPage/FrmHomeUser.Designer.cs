@@ -189,6 +189,7 @@
             // 
             // LayoutSanPham
             // 
+            this.LayoutSanPham.AutoScroll = true;
             this.LayoutSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayoutSanPham.Location = new System.Drawing.Point(0, 0);
             this.LayoutSanPham.Name = "LayoutSanPham";

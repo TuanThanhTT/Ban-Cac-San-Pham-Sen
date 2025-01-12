@@ -48,7 +48,7 @@ namespace MuaBanSanPhamSen_BabyLotus
                     {
                         if(acc.passs == pass)
                         {
-                            var f = new FrmUser(acc);
+                            var f = new FrmUser();
                             f.Show();
                             this.Close();   
                             

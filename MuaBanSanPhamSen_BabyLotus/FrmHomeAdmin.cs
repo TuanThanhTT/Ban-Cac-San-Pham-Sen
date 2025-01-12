@@ -15,12 +15,53 @@ namespace MuaBanSanPhamSen_BabyLotus
     {
         private int pageNow = 0;
         private int countPage = 0;
+      
         public FrmHomeAdmin()
         {
+           
             InitializeComponent();
-            setCountpage();
+            LoadInitialData();
            
         }
+
+        private async void LoadInitialData()
+        {
+            try
+            {
+                await setCountPageAsync();
+                loadSanPhamAsync(); // Chỉ gọi khi cần
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi tải dữ liệu ban đầu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public async Task setCountPageAsync()
+        {
+            try
+            {
+                int totalItems = await GetTotalItemCount();
+                if (totalItems > 0)
+                {
+                    countPage = (totalItems + 9) / 10; // Mỗi trang 10 sản phẩm
+                    pageNow = 1;
+                    lbCountPage.Text = $"{pageNow} / {countPage}";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi tính số trang: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public async Task<int> GetTotalItemCount()
+        {
+            using (var context = new BanSanPhamSen())
+            {
+                return await context.Product.CountAsync(p => !p.isDelete);
+            }
+        }
+
 
 
         public async void setCountpage()
@@ -34,6 +75,44 @@ namespace MuaBanSanPhamSen_BabyLotus
             }
 
         }
+
+
+        public async void loadSanPhamAsync()
+        {
+            try
+            {
+                LayoutHienThiSanPham.Controls.Clear(); // Xóa nội dung cũ
+                var dsSanPham = await GetProductsByPage(pageNow, 10); // Lấy 10 sản phẩm cho trang hiện tại
+
+                foreach (var product in dsSanPham)
+                {
+                    if (product != null)
+                    {
+                        var userForm = new FrmSanPhamItem(product);
+                        userForm.Margin = new Padding(20);
+                        LayoutHienThiSanPham.Controls.Add(userForm);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi tải sản phẩm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public async Task<List<Product>> GetProductsByPage(int pageNumber, int pageSize)
+        {
+            using (var context = new BanSanPhamSen())
+            {
+                return await context.Product
+                    .Where(p => !p.isDelete)
+                    .OrderBy(p => p.productId) // Đảm bảo thứ tự
+                    .Skip((pageNumber - 1) * pageSize) // Bỏ qua các sản phẩm của trang trước
+                    .Take(pageSize) // Lấy đúng số lượng sản phẩm cần
+                    .ToListAsync();
+            }
+        }
+
+
 
         public async void loadSanPham()
         {
@@ -78,8 +157,11 @@ namespace MuaBanSanPhamSen_BabyLotus
             if (pageNow >= countPage) 
                 return;
             pageNow++;
-            loadSanPham();
+            loadSanPhamAsync();
             lbCountPage.Text = $"{pageNow} / {countPage}";
+
+
+          
 
         }
 
@@ -110,8 +192,8 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             if (pageNow <= 1) 
                 return; 
-            pageNow--; 
-            loadSanPham(); 
+            pageNow--;
+            loadSanPhamAsync(); 
             lbCountPage.Text = $"{pageNow} / {countPage}";
 
         }

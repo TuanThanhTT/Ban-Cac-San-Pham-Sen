@@ -10,13 +10,13 @@ namespace MuaBanSanPhamSen_BabyLotus
 {
     public partial class FrmUser : Form
     {
-        private Guna2Button currentBtn;
-        private CustomTabControl tabMain;
-        private Account account;
-        private User user;
-        public FrmUser(Account acc)
+        public Guna2Button currentBtn;
+        public CustomTabControl tabMain;
+        public Account account;
+        public User user;
+        public FrmUser()
         {
-            account= acc;   
+           /// account= acc;   
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.Text = "Bé Hạt Sen Baby Lotus";
@@ -139,7 +139,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnLichSu);
             addTabMain();
-            var form = new FrmXemSanPhamMua();
+            var form = new FrmXemSanPhamMua(this);
             addTabPage(tabMain, form);
         }
 

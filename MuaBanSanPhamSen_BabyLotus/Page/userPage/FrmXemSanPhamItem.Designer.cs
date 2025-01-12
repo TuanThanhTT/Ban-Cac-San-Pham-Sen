@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.GroupTitle = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbPrice = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.PTBimg = new Guna.UI2.WinForms.Guna2PictureBox();
             this.GroupTitle.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,45 +57,8 @@
             this.GroupTitle.Text = "Tên sản phẩm";
             this.GroupTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GroupTitle.Click += new System.EventHandler(this.GroupTitle_Click);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.PTBimg);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 40);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(300, 215);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.btnXemChiTiet);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 300);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(300, 70);
-            this.guna2Panel2.TabIndex = 1;
-            // 
-            // btnXemChiTiet
-            // 
-            this.btnXemChiTiet.Animated = true;
-            this.btnXemChiTiet.BackColor = System.Drawing.Color.Transparent;
-            this.btnXemChiTiet.BorderRadius = 10;
-            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXemChiTiet.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(3, 12);
-            this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(294, 45);
-            this.btnXemChiTiet.TabIndex = 0;
-            this.btnXemChiTiet.Text = "Xem sản phẩm";
-            this.btnXemChiTiet.UseTransparentBackground = true;
+            this.GroupTitle.MouseLeave += new System.EventHandler(this.GroupTitle_MouseLeave);
+            this.GroupTitle.MouseHover += new System.EventHandler(this.GroupTitle_MouseHover);
             // 
             // guna2Panel3
             // 
@@ -116,6 +79,48 @@
             this.lbPrice.TabIndex = 0;
             this.lbPrice.Text = "120500vnđ";
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btnXemChiTiet);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 300);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(300, 70);
+            this.guna2Panel2.TabIndex = 1;
+            // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.Animated = true;
+            this.btnXemChiTiet.BackColor = System.Drawing.Color.Transparent;
+            this.btnXemChiTiet.BorderRadius = 10;
+            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemChiTiet.FillColor = System.Drawing.Color.Green;
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.Red;
+            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnXemChiTiet.Location = new System.Drawing.Point(3, 12);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(294, 45);
+            this.btnXemChiTiet.TabIndex = 0;
+            this.btnXemChiTiet.Text = "Xem sản phẩm";
+            this.btnXemChiTiet.UseTransparentBackground = true;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.PTBimg);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 40);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(300, 215);
+            this.guna2Panel1.TabIndex = 0;
+            // 
             // PTBimg
             // 
             this.PTBimg.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -134,11 +139,13 @@
             this.Controls.Add(this.GroupTitle);
             this.Name = "FrmXemSanPhamItem";
             this.Size = new System.Drawing.Size(300, 370);
+            this.MouseLeave += new System.EventHandler(this.FrmXemSanPhamItem_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.FrmXemSanPhamItem_MouseHover);
             this.GroupTitle.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PTBimg)).EndInit();
             this.ResumeLayout(false);
 

@@ -10,20 +10,23 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
     public partial class FrmXemSanPhamItem : UserControl
     {
         private Product product;
-
-        public FrmXemSanPhamItem(Product p)
+        private FrmUser formMain;
+        public FrmXemSanPhamItem(Product p, FrmUser formMain)
         {
+            this.formMain= formMain;    
             product = p;
             InitializeComponent();
             loadProduct();
+           
         }
-
+       
         public void loadProduct()
         {
             try
             {
-                if(product != null) {
-                
+                if (product != null)
+                {
+
                     GroupTitle.Text = product.productName;
                     lbPrice.Text = product.price + "vnđ";
 
@@ -57,9 +60,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
                 }
 
-                
 
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -68,6 +72,33 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
         private void GroupTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GroupTitle_MouseHover(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void GroupTitle_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmXemSanPhamItem_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void FrmXemSanPhamItem_MouseLeave(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            this.formMain.addTabMain();
+            var form = new FrmChiTietSanPhamChon(product);
+            this.formMain.addTabPage(this.formMain.tabMain, form);
         }
     }
 }

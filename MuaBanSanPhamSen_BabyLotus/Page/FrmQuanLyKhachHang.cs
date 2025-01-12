@@ -84,7 +84,6 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
                     }
                     GVKhachHang.DataSource = data;
-                    MessageBox.Show("co load");
                 }
 
 
@@ -417,7 +416,6 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             try
             {
                 var ds =  getDanhSachNguoiDungBiKhoa();
-                MessageBox.Show("so luong khoa: " + ds.Count);
                
                 loadTableKhachHangBangDanhSach(ds);
                 txtKhoaTaiKhoan.Visible = false;

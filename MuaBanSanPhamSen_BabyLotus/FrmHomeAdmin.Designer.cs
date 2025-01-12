@@ -58,7 +58,7 @@
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
             this.guna2Panel4.Controls.Add(this.lbCountPage);
             this.guna2Panel4.Controls.Add(this.btnSau);
             this.guna2Panel4.Controls.Add(this.btnTruoc);
@@ -123,7 +123,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(213)))), ((int)(((byte)(184)))));
             this.guna2Panel3.Controls.Add(this.btnTim);
             this.guna2Panel3.Controls.Add(this.txtTimSanPham);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -141,7 +141,7 @@
             this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTim.FillColor = System.Drawing.Color.Teal;
+            this.btnTim.FillColor = System.Drawing.Color.Blue;
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
