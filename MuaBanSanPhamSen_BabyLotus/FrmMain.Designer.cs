@@ -108,6 +108,7 @@
             this.btnThoat.Size = new System.Drawing.Size(406, 87);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Đăng Xuất";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // guna2Separator2
             // 

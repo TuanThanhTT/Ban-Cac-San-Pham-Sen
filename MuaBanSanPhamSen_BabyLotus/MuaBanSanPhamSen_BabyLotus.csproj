@@ -99,6 +99,7 @@
     <Compile Include="FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DanhSachTaiKhoan.cs" />
     <Compile Include="MuaBanCacSanPhamTuSenDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -343,7 +344,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Image\" />
-    <Folder Include="Models\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>

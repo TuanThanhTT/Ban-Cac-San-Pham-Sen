@@ -747,5 +747,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
 			}
 		}
-	}
+
+        private void GVSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

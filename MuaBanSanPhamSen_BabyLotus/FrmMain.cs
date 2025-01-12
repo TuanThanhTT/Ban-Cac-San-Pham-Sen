@@ -160,5 +160,12 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
 
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var f = new FrmLogin();
+            f.Show();
+        }
     }
 }
