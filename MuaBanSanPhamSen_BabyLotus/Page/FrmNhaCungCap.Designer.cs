@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNhaCungCap));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -113,6 +114,7 @@
             this.btnTim.FillColor = System.Drawing.SystemColors.Highlight;
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.Location = new System.Drawing.Point(1288, 332);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(106, 45);
@@ -130,6 +132,7 @@
             this.btnLamMoi.FillColor = System.Drawing.Color.Gray;
             this.btnLamMoi.Font = new System.Drawing.Font("Tahoma", 10.2F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(546, 332);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(125, 45);
@@ -164,6 +167,7 @@
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(284, 332);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(125, 45);
@@ -181,6 +185,7 @@
             this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCapNhat.Font = new System.Drawing.Font("Tahoma", 10.2F);
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
             this.btnCapNhat.Location = new System.Drawing.Point(153, 332);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(125, 45);
@@ -198,6 +203,7 @@
             this.btnThem.FillColor = System.Drawing.Color.Green;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(22, 332);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(125, 45);
