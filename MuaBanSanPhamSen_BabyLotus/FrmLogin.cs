@@ -48,14 +48,26 @@ namespace MuaBanSanPhamSen_BabyLotus
                     {
                         if(acc.passs == pass)
                         {
-
-                            var user = context.Users.Find(acc.UserAccountId);
-                            if(user != null)
+                            if (acc.EmployAccountId== null)
                             {
-                                var f = new FrmUser(user);
-                                f.Show();
-                               
+                                var user = context.Users.Find(acc.UserAccountId);
+                                if (user != null)
+                                {
+                                    var f = new FrmUser(user);
+                                    f.Show();
+
+                                }
                             }
+                            else{
+                                var employ = context.Employees.Find(acc.EmployAccountId);
+                                if (employ != null)
+                                {
+                                    var f = new FrmMain(employ);
+                                    f.Show();
+
+                                }
+                            }
+                           
                            
 
                            

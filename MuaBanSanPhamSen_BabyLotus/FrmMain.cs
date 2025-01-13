@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using BeHatSenLotus.Model;
+using Guna.UI2.WinForms;
 using MuaBanSanPhamSen_BabyLotus.Page;
 using System;
 using System.Drawing;
@@ -10,8 +11,10 @@ namespace MuaBanSanPhamSen_BabyLotus
     {
         private Guna2Button currentBtn;
         private CustomTabControl tabMain;
-        public FrmMain()
+        private Employee employ;
+        public FrmMain(Employee employ)
         {
+            this.employ = employ;   
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
            
