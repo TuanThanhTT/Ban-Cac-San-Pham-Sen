@@ -7,13 +7,13 @@ namespace BeHatSenLotus.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class updataAccountTable : IMigrationMetadata
+    public sealed partial class Updatedatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updataAccountTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Updatedatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202501111107020_updataAccountTable"; }
+            get { return "202501130756197_Updatedatabase"; }
         }
         
         string IMigrationMetadata.Source

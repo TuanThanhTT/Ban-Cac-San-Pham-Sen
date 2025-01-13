@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BeHatSenLotus.Model
 {
@@ -18,6 +14,7 @@ namespace BeHatSenLotus.Model
 
         public virtual Account account { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual GioHang GioHang { get; set; }
     }
 
 

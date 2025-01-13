@@ -319,6 +319,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             imgString = "";
             lbHinhAnh.Visible= false;
             btnChonAnh.Visible= false;
+            btnXemAnh.Visible= false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -349,7 +350,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 txtMota.Text = moTa;
                 txtSoLuong.Text = soLuong;
                 txtGiaBan.Text = giaBan;
-                txtMota.Text += moTa;
+                txtMota.Text = moTa;
                 CBBLoaiSanPham.SelectedValue = loaiSanPham;
                 CBBNhaCungCap.SelectedValue = nhaCungCap;   
 

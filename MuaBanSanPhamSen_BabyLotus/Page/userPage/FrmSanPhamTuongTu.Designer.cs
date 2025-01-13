@@ -55,6 +55,7 @@
             this.PTBAnhSanPham.Location = new System.Drawing.Point(0, 40);
             this.PTBAnhSanPham.Name = "PTBAnhSanPham";
             this.PTBAnhSanPham.Size = new System.Drawing.Size(170, 170);
+            this.PTBAnhSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTBAnhSanPham.TabIndex = 0;
             this.PTBAnhSanPham.TabStop = false;
             this.PTBAnhSanPham.Click += new System.EventHandler(this.PTBAnhSanPham_Click);

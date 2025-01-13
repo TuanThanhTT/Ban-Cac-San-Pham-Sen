@@ -106,6 +106,7 @@
             // 
             // LayOutLoaiSanPhamTuongTu
             // 
+            this.LayOutLoaiSanPhamTuongTu.AutoScroll = true;
             this.LayOutLoaiSanPhamTuongTu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayOutLoaiSanPhamTuongTu.Location = new System.Drawing.Point(0, 40);
             this.LayOutLoaiSanPhamTuongTu.Name = "LayOutLoaiSanPhamTuongTu";
@@ -204,6 +205,7 @@
             this.btnMuangay.TabIndex = 2;
             this.btnMuangay.Text = "Mua ngay";
             this.btnMuangay.UseTransparentBackground = true;
+            this.btnMuangay.Click += new System.EventHandler(this.btnMuangay_Click);
             // 
             // txtMoTa
             // 

@@ -53,36 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202412241101060_UpdateV5.cs" />
-    <Compile Include="Migrations\202412241101060_UpdateV5.designer.cs">
-      <DependentUpon>202412241101060_UpdateV5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501070320105_addImgProduct.cs" />
-    <Compile Include="Migrations\202501070320105_addImgProduct.designer.cs">
-      <DependentUpon>202501070320105_addImgProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501070720265_updateManfactory.cs" />
-    <Compile Include="Migrations\202501070720265_updateManfactory.designer.cs">
-      <DependentUpon>202501070720265_updateManfactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501090248299_updatedeleteCate.cs" />
-    <Compile Include="Migrations\202501090248299_updatedeleteCate.designer.cs">
-      <DependentUpon>202501090248299_updatedeleteCate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501090425588_updateManfactoryIssdelete.cs" />
-    <Compile Include="Migrations\202501090425588_updateManfactoryIssdelete.designer.cs">
-      <DependentUpon>202501090425588_updateManfactoryIssdelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501111107020_updataAccountTable.cs" />
-    <Compile Include="Migrations\202501111107020_updataAccountTable.designer.cs">
-      <DependentUpon>202501111107020_updataAccountTable.cs</DependentUpon>
+    <Compile Include="Migrations\202501130756197_Updatedatabase.cs" />
+    <Compile Include="Migrations\202501130756197_Updatedatabase.designer.cs">
+      <DependentUpon>202501130756197_Updatedatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\AccountPermisstion.cs" />
     <Compile Include="Model\BanSanPhamSen.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\ChiTietGioHang.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\GioHang.cs" />
     <Compile Include="Model\Manfactory.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderItem.cs" />
@@ -97,23 +79,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202412241101060_UpdateV5.resx">
-      <DependentUpon>202412241101060_UpdateV5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501070320105_addImgProduct.resx">
-      <DependentUpon>202501070320105_addImgProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501070720265_updateManfactory.resx">
-      <DependentUpon>202501070720265_updateManfactory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501090248299_updatedeleteCate.resx">
-      <DependentUpon>202501090248299_updatedeleteCate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501090425588_updateManfactoryIssdelete.resx">
-      <DependentUpon>202501090425588_updateManfactoryIssdelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501111107020_updataAccountTable.resx">
-      <DependentUpon>202501111107020_updataAccountTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501130756197_Updatedatabase.resx">
+      <DependentUpon>202501130756197_Updatedatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

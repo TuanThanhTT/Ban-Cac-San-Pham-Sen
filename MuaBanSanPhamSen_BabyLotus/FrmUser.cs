@@ -14,9 +14,10 @@ namespace MuaBanSanPhamSen_BabyLotus
         public CustomTabControl tabMain;
         public Account account;
         public User user;
-        public FrmUser()
+        public FrmUser(User user)
         {
-           /// account= acc;   
+          
+           this.user = user;
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.Text = "Bé Hạt Sen Baby Lotus";
@@ -100,6 +101,27 @@ namespace MuaBanSanPhamSen_BabyLotus
 
         }
 
+        public void addTabPageV2(CustomTabControl tab, UserControl userForm)
+        {
+            foreach (TabPage t in tab.TabPages)
+            {
+                if (t.Name == userForm.Name)
+                {
+                    tab.TabPages.Remove(t);
+                    break; 
+                }
+            }
+
+            var page = new TabPage(userForm.Name);
+            page.Name = userForm.Name;
+            userForm.Dock = DockStyle.Fill;
+            page.Controls.Add(userForm);
+            tab.Controls.Add(page);
+            tab.SelectedTab = page;
+
+
+        }
+
 
         public void updateBoder(Guna2Button newButton)
         {
@@ -139,7 +161,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnLichSu);
             addTabMain();
-            var form = new FrmXemSanPhamMua(this);
+            var form = new FrmXemSanPhamMua(this, user);
             addTabPage(tabMain, form);
         }
 

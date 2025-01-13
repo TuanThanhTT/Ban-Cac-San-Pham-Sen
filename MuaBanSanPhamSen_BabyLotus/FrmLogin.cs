@@ -48,9 +48,17 @@ namespace MuaBanSanPhamSen_BabyLotus
                     {
                         if(acc.passs == pass)
                         {
-                            var f = new FrmUser();
-                            f.Show();
-                            this.Close();   
+
+                            var user = context.Users.Find(acc.UserAccountId);
+                            if(user != null)
+                            {
+                                var f = new FrmUser(user);
+                                f.Show();
+                               
+                            }
+                           
+
+                           
                             
                         }
                     }

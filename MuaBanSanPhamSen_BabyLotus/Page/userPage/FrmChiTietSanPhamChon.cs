@@ -11,26 +11,32 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
     public partial class FrmChiTietSanPhamChon : UserControl
     {
         private Product pro;
-        private List<Product> dsLaoiTuongTu = new List<Product>();
-        public FrmChiTietSanPhamChon(Product product)
+        private List<Product> dsLaoiTuongTu { get; set; }
+        private FrmUser userFrom;
+        private User user;
+        public FrmChiTietSanPhamChon(Product product, FrmUser userFrom, User user)
         {
-            pro = product;  
+            pro = product;
+            this.userFrom = userFrom;
+            this.user = user;   
+
             InitializeComponent();
             loadInfo();
-            loadSanPhamTuongTu();
+            NBRSOLuongMua.Minimum = 0;
+            NBRSOLuongMua.Maximum = 2000;
+
         }
-        public void loadSanPhamTuongTu()
+        public List<Product> loadSanPhamTuongTu()
         {
             if (pro != null)
             {
                 int loai = pro.categoryId;
                 using (var context = new BanSanPhamSen())
                 {
-                    var dsLaoiTuongTu = context.Product.Where(s => s.categoryId == loai).ToList();
-                    MessageBox.Show("so luong: " + dsLaoiTuongTu.Count);
-                   
+                     return context.Product.Where(s => s.categoryId == loai && s.productId!=pro.productId && s.isDelete == false).ToList();         
                 }
             }
+            return null;
         }
 
         public void loadInfo()
@@ -49,9 +55,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                     {
                         var listImg = pro.imgs.Trim().Split(';').ToArray();
                         string destFile = Path.Combine(Directory.GetCurrentDirectory(),"Upload", listImg[0].Trim());
-                        MessageBox.Show("file path: " + destFile);
                         if(File.Exists(destFile)) {
-                            MessageBox.Show("File co ton tai");
                             if (PTBHinhAnh.Image != null)
                             {
                                 PTBHinhAnh.Image = null;
@@ -77,17 +81,28 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
 
                     }
-                    //load san pham tuong tu 
-                    if (dsLaoiTuongTu.Count > 0)
+                    dsLaoiTuongTu = loadSanPhamTuongTu();
+
+                    if (dsLaoiTuongTu != null)
                     {
-                        LayOutLoaiSanPhamTuongTu.Controls.Clear();
-                        LayOutLoaiSanPhamTuongTu.WrapContents = false;
-                        foreach (var item in dsLaoiTuongTu)
+                        //load san pham tuong tu 
+                        if (dsLaoiTuongTu.Count > 0)
                         {
-                            var f = new FrmSanPhamTuongTu(item, this);
-                            LayOutLoaiSanPhamTuongTu.Controls.Add(f);
+                            LayOutLoaiSanPhamTuongTu.Controls.Clear();
+                            LayoutHinhAnh.FlowDirection = FlowDirection.LeftToRight;
+                            LayOutLoaiSanPhamTuongTu.WrapContents = false;
+                            foreach (var item in dsLaoiTuongTu)
+                            {
+                                
+                                    var f = new FrmSanPhamTuongTu(item, userFrom, user);
+                                    LayOutLoaiSanPhamTuongTu.Controls.Add(f);
+
+                                   
+                                
+                            }
                         }
                     }
+                   
                   
 
                 }
@@ -123,6 +138,94 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
         private void LayOutLoaiSanPhamTuongTu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnMuangay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int soLuong = Convert.ToInt32(NBRSOLuongMua.Value);
+                if(soLuong  == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+                if(soLuong > pro.quantity)
+                {
+                    MessageBox.Show("Số lượng sản phẩm không được lớn hơn số lượng hiện có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+
+                DialogResult result = MessageBox.Show("Bạn có muốn theo sản phẩm này vào giỏ hàng?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+
+                    if (user != null)
+                    {
+                        using (var context = new BanSanPhamSen())
+                        {
+                            // Kiểm tra xem người dùng đã có giỏ hàng hay chưa
+                            var giohang = context.GioHangs.SingleOrDefault(g => g.userId == user.UserId);
+                            if (giohang == null)
+                            {
+                                // Tạo giỏ hàng mới nếu chưa có
+                                giohang = new GioHang
+                                {
+                                    userId = user.UserId,
+                                    User = user
+                                };
+                                context.GioHangs.Add(giohang);
+                                context.SaveChanges();
+                            }
+
+                            // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+                            var item = context.ChiTietGioHang
+                                .SingleOrDefault(i => i.gioHangId == giohang.Id && i.productId == pro.productId);
+
+                            if (item != null)
+                            {
+                                // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
+                                item.quantity += soLuong;
+                            }
+                            else
+                            {
+                                // Nếu sản phẩm chưa có trong giỏ hàng, tạo item mới
+                                item = new ChiTietGioHang
+                                {
+                                    productId = pro.productId,
+                                    quantity = soLuong,
+                                    gioHangId = giohang.Id
+                                };
+                                context.ChiTietGioHang.Add(item);
+                            }
+
+                            context.SaveChanges();
+
+                            // Cập nhật số lượng sản phẩm trong kho
+                            var sanPham = context.Product.Find(pro.productId);
+                            if (sanPham != null)
+                            {
+                                sanPham.quantity -= soLuong;
+                                context.SaveChanges();
+                                lbSoLuongTon.Text = sanPham.quantity+"";
+                                MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+
+
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex+"");
+            }
         }
     }
 }

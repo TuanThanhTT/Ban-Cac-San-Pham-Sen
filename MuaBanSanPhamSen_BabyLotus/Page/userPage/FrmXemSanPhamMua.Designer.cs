@@ -110,7 +110,7 @@
             this.btnLoc.TabIndex = 1;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseTransparentBackground = true;
-            this.btnLoc.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             this.btnLoc.MouseLeave += new System.EventHandler(this.btnLoc_MouseLeave);
             this.btnLoc.MouseHover += new System.EventHandler(this.btnLoc_MouseHover);
             // 
@@ -179,7 +179,7 @@
             this.btnTim.TabIndex = 1;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseTransparentBackground = true;
-            this.btnTim.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             this.btnTim.MouseLeave += new System.EventHandler(this.btnTim_MouseLeave);
             this.btnTim.MouseHover += new System.EventHandler(this.btnTim_MouseHover);
             // 

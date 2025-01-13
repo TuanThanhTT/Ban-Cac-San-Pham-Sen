@@ -11,10 +11,5 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.c
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.CopyComplete
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.exe
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.pdb
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.UpdateV5.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.Updatedatabase.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.csproj.GenerateResource.cache
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.addImgProduct.resources
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactory.resources
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updatedeleteCate.resources
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updateManfactoryIssdelete.resources
-D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\BeHatSenLotus\obj\Debug\BeHatSenLotus.Migrations.updataAccountTable.resources

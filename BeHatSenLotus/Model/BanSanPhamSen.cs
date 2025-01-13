@@ -1,12 +1,7 @@
 ﻿
 
 using BeHatSenLotus.Migrations;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeHatSenLotus.Model
 {
@@ -27,6 +22,8 @@ namespace BeHatSenLotus.Model
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 
+        public DbSet<GioHang> GioHangs { get; set; }
+        public DbSet<ChiTietGioHang> ChiTietGioHang { get; set; }   
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -40,6 +37,13 @@ namespace BeHatSenLotus.Model
                 .HasRequired(p => p.Manfactory)
                 .WithMany(m => m.Products)
                 .HasForeignKey(p => p.manfactoryId);
+
+            modelBuilder.Entity<ChiTietGioHang>()
+               .HasRequired(p => p.gioHang)
+               .WithMany(m => m.chitiet)
+               .HasForeignKey(p => p.gioHangId);
+
+
 
             modelBuilder.Entity<AccountPermisstion>()
                 .HasKey(ap => new { ap.accountId, ap.permissitionId });
@@ -77,6 +81,9 @@ namespace BeHatSenLotus.Model
                 .HasRequired(oi => oi.Product)
                 .WithMany(p => p.OrderItems)
                 .HasForeignKey(oi => oi.ProductId);
+
+            modelBuilder.Entity<User>().HasOptional(u => u.GioHang).
+                WithRequired(g => g.User).Map(m => m.MapKey("GioHang_UserId"));
         }
 
 
