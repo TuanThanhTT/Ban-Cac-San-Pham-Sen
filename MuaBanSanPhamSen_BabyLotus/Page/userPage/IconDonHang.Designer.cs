@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IconDonHang));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.PTBHinhanh = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GroupBoxTenSanPham = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBHinhanh)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.GroupBoxTenSanPham.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,19 @@
             this.guna2Panel1.Size = new System.Drawing.Size(112, 100);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // PTBHinhanh
+            // 
+            this.PTBHinhanh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PTBHinhanh.Image = ((System.Drawing.Image)(resources.GetObject("PTBHinhanh.Image")));
+            this.PTBHinhanh.ImageRotate = 0F;
+            this.PTBHinhanh.Location = new System.Drawing.Point(0, 0);
+            this.PTBHinhanh.Name = "PTBHinhanh";
+            this.PTBHinhanh.Size = new System.Drawing.Size(112, 100);
+            this.PTBHinhanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PTBHinhanh.TabIndex = 0;
+            this.PTBHinhanh.TabStop = false;
+            this.PTBHinhanh.Click += new System.EventHandler(this.PTBHinhanh_Click);
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
@@ -59,17 +73,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(315, 100);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // PTBHinhanh
-            // 
-            this.PTBHinhanh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PTBHinhanh.ImageRotate = 0F;
-            this.PTBHinhanh.Location = new System.Drawing.Point(0, 0);
-            this.PTBHinhanh.Name = "PTBHinhanh";
-            this.PTBHinhanh.Size = new System.Drawing.Size(112, 100);
-            this.PTBHinhanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PTBHinhanh.TabIndex = 0;
-            this.PTBHinhanh.TabStop = false;
             // 
             // GroupBoxTenSanPham
             // 
@@ -85,6 +88,26 @@
             this.GroupBoxTenSanPham.TabIndex = 0;
             this.GroupBoxTenSanPham.Text = "Tến sản phẩm";
             this.GroupBoxTenSanPham.Click += new System.EventHandler(this.GroupBoxTenSanPham_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Animated = true;
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(173, 47);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(91, 45);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseTransparentBackground = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtSoLuong
             // 
@@ -111,25 +134,6 @@
             this.txtSoLuong.Size = new System.Drawing.Size(142, 42);
             this.txtSoLuong.TabIndex = 0;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Animated = true;
-            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoa.BorderRadius = 10;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.Red;
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(173, 47);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(91, 45);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseTransparentBackground = true;
-            // 
             // IconDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,8 +143,8 @@
             this.Name = "IconDonHang";
             this.Size = new System.Drawing.Size(427, 100);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PTBHinhanh)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.GroupBoxTenSanPham.ResumeLayout(false);
             this.ResumeLayout(false);
 

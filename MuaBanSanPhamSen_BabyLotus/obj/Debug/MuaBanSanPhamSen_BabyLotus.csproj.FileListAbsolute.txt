@@ -44,3 +44,4 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\Mu
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmChiTietSanPhamChon.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmSanPhamTuongTu.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmAnhTuongTu.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmDuyetHoaDon.resources

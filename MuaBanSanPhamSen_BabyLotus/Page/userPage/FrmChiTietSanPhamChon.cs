@@ -204,16 +204,17 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                             }
 
                             context.SaveChanges();
+                            MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             // Cập nhật số lượng sản phẩm trong kho
-                            var sanPham = context.Product.Find(pro.productId);
-                            if (sanPham != null)
-                            {
-                                sanPham.quantity -= soLuong;
-                                context.SaveChanges();
-                                lbSoLuongTon.Text = sanPham.quantity+"";
-                                MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                            //var sanPham = context.Product.Find(pro.productId);
+                            //if (sanPham != null)
+                            //{
+                            //    sanPham.quantity -= soLuong;
+                            //    context.SaveChanges();
+                            //    lbSoLuongTon.Text = sanPham.quantity+"";
+                            //    MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //}
                         }
                     }
 

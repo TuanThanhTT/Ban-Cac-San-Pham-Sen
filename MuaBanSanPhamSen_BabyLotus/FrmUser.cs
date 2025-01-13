@@ -153,7 +153,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnDonHang);
             addTabMain();
-            var form = new FrmDonHang();
+            var form = new FrmDonHang(user,this);
             addTabPage(tabMain, form);
         }
 
@@ -169,7 +169,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnTaiKhoan);
             addTabMain();
-            var form = new FrmThongTinTaiKhoan();
+            var form = new FrmThongTinTaiKhoan(user);
             addTabPage(tabMain, form);
         }
     }

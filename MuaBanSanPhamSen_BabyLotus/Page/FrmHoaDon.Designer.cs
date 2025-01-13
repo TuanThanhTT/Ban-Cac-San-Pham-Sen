@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoaDon));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoaDon));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -91,6 +91,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDuyetHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -120,6 +121,7 @@
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Black;
+            this.guna2GroupBox2.Controls.Add(this.btnDuyetHoaDon);
             this.guna2GroupBox2.Controls.Add(this.guna2Button2);
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox7);
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox6);
@@ -1006,6 +1008,25 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // btnDuyetHoaDon
+            // 
+            this.btnDuyetHoaDon.Animated = true;
+            this.btnDuyetHoaDon.BorderRadius = 10;
+            this.btnDuyetHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDuyetHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDuyetHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDuyetHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDuyetHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnDuyetHoaDon.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.btnDuyetHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnDuyetHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetHoaDon.Image")));
+            this.btnDuyetHoaDon.Location = new System.Drawing.Point(23, 809);
+            this.btnDuyetHoaDon.Name = "btnDuyetHoaDon";
+            this.btnDuyetHoaDon.Size = new System.Drawing.Size(326, 45);
+            this.btnDuyetHoaDon.TabIndex = 2;
+            this.btnDuyetHoaDon.Text = "Duyêt hóa đơn";
+            this.btnDuyetHoaDon.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // FrmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1091,5 +1112,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnDuyetHoaDon;
     }
 }

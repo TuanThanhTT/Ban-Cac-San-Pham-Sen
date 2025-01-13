@@ -100,6 +100,7 @@
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DanhSachTaiKhoan.cs" />
+    <Compile Include="Models\DonHangChoDuyet.cs" />
     <Compile Include="MuaBanCacSanPhamTuSenDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +108,12 @@
     </Compile>
     <Compile Include="Page\CustomTabControl.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Page\FrmDuyetHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\FrmDuyetHoaDon.Designer.cs">
+      <DependentUpon>FrmDuyetHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Page\FrmHoaDon.cs">
       <SubType>UserControl</SubType>
@@ -253,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\FrmDuyetHoaDon.resx">
+      <DependentUpon>FrmDuyetHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
