@@ -32,7 +32,7 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.LayOutLoaiSanPhamTuongTu = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.LayoutSanPhamTuongTu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -93,7 +93,7 @@
             // 
             // guna2GroupBox2
             // 
-            this.guna2GroupBox2.Controls.Add(this.flowLayoutPanel2);
+            this.guna2GroupBox2.Controls.Add(this.LayOutLoaiSanPhamTuongTu);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,13 +104,14 @@
             this.guna2GroupBox2.TabIndex = 0;
             this.guna2GroupBox2.Text = "sản phẩm tương tự";
             // 
-            // flowLayoutPanel2
+            // LayOutLoaiSanPhamTuongTu
             // 
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 40);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1531, 263);
-            this.flowLayoutPanel2.TabIndex = 0;
+            this.LayOutLoaiSanPhamTuongTu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LayOutLoaiSanPhamTuongTu.Location = new System.Drawing.Point(0, 40);
+            this.LayOutLoaiSanPhamTuongTu.Name = "LayOutLoaiSanPhamTuongTu";
+            this.LayOutLoaiSanPhamTuongTu.Size = new System.Drawing.Size(1531, 263);
+            this.LayOutLoaiSanPhamTuongTu.TabIndex = 0;
+            this.LayOutLoaiSanPhamTuongTu.Paint += new System.Windows.Forms.PaintEventHandler(this.LayOutLoaiSanPhamTuongTu_Paint);
             // 
             // guna2Panel1
             // 
@@ -395,6 +396,7 @@
             this.LayoutHinhAnh.Name = "LayoutHinhAnh";
             this.LayoutHinhAnh.Size = new System.Drawing.Size(573, 112);
             this.LayoutHinhAnh.TabIndex = 0;
+            this.LayoutHinhAnh.Paint += new System.Windows.Forms.PaintEventHandler(this.LayoutHinhAnh_Paint);
             // 
             // FrmChiTietSanPhamChon
             // 
@@ -429,7 +431,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.FlowLayoutPanel LayoutHinhAnh;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel LayOutLoaiSanPhamTuongTu;
         private Guna.UI2.WinForms.Guna2Panel LayoutSanPhamTuongTu;
         private Guna.UI2.WinForms.Guna2NumericUpDown NBRSOLuongMua;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;

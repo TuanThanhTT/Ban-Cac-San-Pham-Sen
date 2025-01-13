@@ -46,6 +46,7 @@
             this.GroupTenSanPham.Size = new System.Drawing.Size(170, 210);
             this.GroupTenSanPham.TabIndex = 0;
             this.GroupTenSanPham.Text = "Tên sản phẩm";
+            this.GroupTenSanPham.Click += new System.EventHandler(this.GroupTenSanPham_Click);
             // 
             // PTBAnhSanPham
             // 
@@ -56,6 +57,7 @@
             this.PTBAnhSanPham.Size = new System.Drawing.Size(170, 170);
             this.PTBAnhSanPham.TabIndex = 0;
             this.PTBAnhSanPham.TabStop = false;
+            this.PTBAnhSanPham.Click += new System.EventHandler(this.PTBAnhSanPham_Click);
             // 
             // FrmSanPhamTuongTu
             // 

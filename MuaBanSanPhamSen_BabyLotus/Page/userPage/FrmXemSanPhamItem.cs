@@ -11,14 +11,20 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
     {
         private Product product;
         private FrmUser formMain;
+       
         public FrmXemSanPhamItem(Product p, FrmUser formMain)
         {
             this.formMain= formMain;    
             product = p;
             InitializeComponent();
             loadProduct();
-           
+
+
         }
+
+
+       
+
        
         public void loadProduct()
         {
@@ -99,6 +105,11 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             this.formMain.addTabMain();
             var form = new FrmChiTietSanPhamChon(product);
             this.formMain.addTabPage(this.formMain.tabMain, form);
+        }
+
+        private void PTBimg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

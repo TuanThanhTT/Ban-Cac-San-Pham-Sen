@@ -131,6 +131,7 @@
             this.PTBimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTBimg.TabIndex = 0;
             this.PTBimg.TabStop = false;
+            this.PTBimg.Click += new System.EventHandler(this.PTBimg_Click);
             // 
             // FrmXemSanPhamItem
             // 
