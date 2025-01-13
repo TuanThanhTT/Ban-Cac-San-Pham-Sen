@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BeHatSenLotus.Model;
+using System;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus.Page
 {
     public partial class FrmHoaDon : UserControl
     {
-        public FrmHoaDon()
+        private Employee employ;
+        private FrmMain main;
+        public FrmHoaDon(Employee employe , FrmMain  main)
         {
+            this.employ = employe;
+            this.main = main;
             InitializeComponent();
         }
 
@@ -50,6 +48,13 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDuyetHoaDon_Click(object sender, EventArgs e)
+        {
+            main.addTabMain();
+            var form = new FrmDuyetHoaDon(employ);
+            main.addTabPage(main.tabMain, form);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MuaBanSanPhamSen_BabyLotus
     public partial class FrmMain : Form
     {
         private Guna2Button currentBtn;
-        private CustomTabControl tabMain;
+        public CustomTabControl tabMain;
         private Employee employ;
         public FrmMain(Employee employ)
         {
@@ -93,7 +93,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             updateBoder(btnHoaDon);
             addTabMain();
-            var form = new FrmHoaDon();
+            var form = new FrmHoaDon(employ, this);
             addTabPage(tabMain, form);
 
         }

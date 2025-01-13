@@ -31,28 +31,32 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDuyetHoaDon));
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GVDuyet = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDuyet = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnXem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDuyetHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.txtTenKh = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNgayLap = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtHoTen = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTongtien = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTim = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaKh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDuyetHoaDon = new Guna.UI2.WinForms.Guna2Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMaDon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVDuyet)).BeginInit();
@@ -100,6 +104,7 @@
             this.GVDuyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GVDuyet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column5,
             this.Column2,
             this.Column3,
             this.Column4});
@@ -142,34 +147,7 @@
             this.GVDuyet.ThemeStyle.RowsStyle.Height = 24;
             this.GVDuyet.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GVDuyet.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tồng tiền";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày lập";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.GVDuyet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVDuyet_CellContentClick);
             // 
             // btnDuyet
             // 
@@ -181,9 +159,11 @@
             this.btnDuyet.Controls.Add(this.btnXoa);
             this.btnDuyet.Controls.Add(this.txtTenKh);
             this.btnDuyet.Controls.Add(this.txtNgayLap);
-            this.btnDuyet.Controls.Add(this.txtHoTen);
+            this.btnDuyet.Controls.Add(this.txtMaDon);
+            this.btnDuyet.Controls.Add(this.txtTongtien);
             this.btnDuyet.Controls.Add(this.txtTim);
             this.btnDuyet.Controls.Add(this.txtMaKh);
+            this.btnDuyet.Controls.Add(this.label5);
             this.btnDuyet.Controls.Add(this.label4);
             this.btnDuyet.Controls.Add(this.label3);
             this.btnDuyet.Controls.Add(this.label2);
@@ -206,6 +186,7 @@
             this.btnTim.FillColor = System.Drawing.Color.Navy;
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.Location = new System.Drawing.Point(1170, 280);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(123, 50);
@@ -225,13 +206,14 @@
             this.btnLamMoi.FillColor = System.Drawing.Color.Gray;
             this.btnLamMoi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(351, 285);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(106, 45);
+            this.btnLamMoi.Size = new System.Drawing.Size(127, 45);
             this.btnLamMoi.TabIndex = 2;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseTransparentBackground = true;
-            this.btnLamMoi.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXem
             // 
@@ -251,7 +233,28 @@
             this.btnXem.TabIndex = 2;
             this.btnXem.Text = "Xem";
             this.btnXem.UseTransparentBackground = true;
-            this.btnXem.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
+            // btnDuyetHoaDon
+            // 
+            this.btnDuyetHoaDon.Animated = true;
+            this.btnDuyetHoaDon.BackColor = System.Drawing.Color.Transparent;
+            this.btnDuyetHoaDon.BorderRadius = 10;
+            this.btnDuyetHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDuyetHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDuyetHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDuyetHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDuyetHoaDon.FillColor = System.Drawing.Color.Green;
+            this.btnDuyetHoaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnDuyetHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnDuyetHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetHoaDon.Image")));
+            this.btnDuyetHoaDon.Location = new System.Drawing.Point(15, 285);
+            this.btnDuyetHoaDon.Name = "btnDuyetHoaDon";
+            this.btnDuyetHoaDon.Size = new System.Drawing.Size(106, 45);
+            this.btnDuyetHoaDon.TabIndex = 2;
+            this.btnDuyetHoaDon.Text = "Duyệt";
+            this.btnDuyetHoaDon.UseTransparentBackground = true;
+            this.btnDuyetHoaDon.Click += new System.EventHandler(this.btnDuyetHoaDon_Click);
             // 
             // btnXoa
             // 
@@ -265,6 +268,7 @@
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(127, 285);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(106, 45);
@@ -323,30 +327,30 @@
             this.txtNgayLap.Size = new System.Drawing.Size(329, 50);
             this.txtNgayLap.TabIndex = 1;
             // 
-            // txtHoTen
+            // txtTongtien
             // 
-            this.txtHoTen.BorderColor = System.Drawing.Color.Black;
-            this.txtHoTen.BorderRadius = 10;
-            this.txtHoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtHoTen.DefaultText = "";
-            this.txtHoTen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtHoTen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtHoTen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHoTen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHoTen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoTen.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.ForeColor = System.Drawing.Color.Black;
-            this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoTen.Location = new System.Drawing.Point(709, 17);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.PasswordChar = '\0';
-            this.txtHoTen.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtHoTen.PlaceholderText = "";
-            this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.SelectedText = "";
-            this.txtHoTen.Size = new System.Drawing.Size(329, 50);
-            this.txtHoTen.TabIndex = 1;
+            this.txtTongtien.BorderColor = System.Drawing.Color.Black;
+            this.txtTongtien.BorderRadius = 10;
+            this.txtTongtien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTongtien.DefaultText = "";
+            this.txtTongtien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTongtien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTongtien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTongtien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTongtien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTongtien.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongtien.ForeColor = System.Drawing.Color.Black;
+            this.txtTongtien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTongtien.Location = new System.Drawing.Point(709, 17);
+            this.txtTongtien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTongtien.Name = "txtTongtien";
+            this.txtTongtien.PasswordChar = '\0';
+            this.txtTongtien.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtTongtien.PlaceholderText = "";
+            this.txtTongtien.ReadOnly = true;
+            this.txtTongtien.SelectedText = "";
+            this.txtTongtien.Size = new System.Drawing.Size(329, 50);
+            this.txtTongtien.TabIndex = 1;
             // 
             // txtTim
             // 
@@ -438,25 +442,80 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã khách hàng";
             // 
-            // btnDuyetHoaDon
+            // Column1
             // 
-            this.btnDuyetHoaDon.Animated = true;
-            this.btnDuyetHoaDon.BackColor = System.Drawing.Color.Transparent;
-            this.btnDuyetHoaDon.BorderRadius = 10;
-            this.btnDuyetHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDuyetHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDuyetHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDuyetHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDuyetHoaDon.FillColor = System.Drawing.Color.Green;
-            this.btnDuyetHoaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnDuyetHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnDuyetHoaDon.Location = new System.Drawing.Point(15, 285);
-            this.btnDuyetHoaDon.Name = "btnDuyetHoaDon";
-            this.btnDuyetHoaDon.Size = new System.Drawing.Size(106, 45);
-            this.btnDuyetHoaDon.TabIndex = 2;
-            this.btnDuyetHoaDon.Text = "Duyệt";
-            this.btnDuyetHoaDon.UseTransparentBackground = true;
-            this.btnDuyetHoaDon.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaDon";
+            this.Column5.HeaderText = "Mã đơn hàng";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Tên khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TongTien";
+            this.Column3.HeaderText = "Tồng tiền";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NgayLap";
+            this.Column4.HeaderText = "Ngày lập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1073, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã đơn";
+            // 
+            // txtMaDon
+            // 
+            this.txtMaDon.BorderColor = System.Drawing.Color.Black;
+            this.txtMaDon.BorderRadius = 10;
+            this.txtMaDon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDon.DefaultText = "";
+            this.txtMaDon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDon.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDon.Location = new System.Drawing.Point(1199, 17);
+            this.txtMaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaDon.Name = "txtMaDon";
+            this.txtMaDon.PasswordChar = '\0';
+            this.txtMaDon.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtMaDon.PlaceholderText = "";
+            this.txtMaDon.ReadOnly = true;
+            this.txtMaDon.SelectedText = "";
+            this.txtMaDon.Size = new System.Drawing.Size(177, 50);
+            this.txtMaDon.TabIndex = 1;
             // 
             // FrmDuyetHoaDon
             // 
@@ -479,10 +538,6 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2DataGridView GVDuyet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private Guna.UI2.WinForms.Guna2Panel btnDuyet;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -491,12 +546,19 @@
         private Guna.UI2.WinForms.Guna2Button btnTim;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKh;
         private Guna.UI2.WinForms.Guna2TextBox txtNgayLap;
-        private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
+        private Guna.UI2.WinForms.Guna2TextBox txtTongtien;
         private Guna.UI2.WinForms.Guna2TextBox txtTim;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKh;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
         private Guna.UI2.WinForms.Guna2Button btnXem;
         private Guna.UI2.WinForms.Guna2Button btnDuyetHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaDon;
+        private System.Windows.Forms.Label label5;
     }
 }

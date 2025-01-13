@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Models\DanhSachTaiKhoan.cs" />
     <Compile Include="Models\DonHangChoDuyet.cs" />
+    <Compile Include="Models\ThongTinDonHangDuyet.cs" />
     <Compile Include="MuaBanCacSanPhamTuSenDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
