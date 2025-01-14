@@ -200,6 +200,24 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
                         }
                     }
+                    //so luong hoa don
+                    var dsHoaDon = context.Orders.Where(s=>s.UserId.ToString() == maKH).ToList();
+                    Decimal tongTien = 0;
+                    if(dsHoaDon != null)
+                    {
+                        txtHoaDon.Text = dsHoaDon.Count() + "";
+                        if(dsHoaDon.Count() > 0)
+                        {
+                            foreach(var item in dsHoaDon)
+                            {
+                                if (item != null)
+                                {
+                                    tongTien += item.totalAmount;
+                                }
+                            }
+                            txtThanhTien.Text = tongTien + " vnđ";
+                        }
+                    }
                 }
 
               
