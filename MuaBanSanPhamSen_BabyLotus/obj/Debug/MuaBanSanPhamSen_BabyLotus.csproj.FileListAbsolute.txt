@@ -45,3 +45,9 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\Mu
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmSanPhamTuongTu.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmAnhTuongTu.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.FrmDuyetHoaDon.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\EPPlus.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\EPPlus.Interfaces.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\EPPlus.System.Drawing.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\Microsoft.IO.RecyclableMemoryStream.dll
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\EPPlus.xml
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\Microsoft.IO.RecyclableMemoryStream.xml
