@@ -1,4 +1,5 @@
 ﻿using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -480,6 +481,34 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 }
                                      
             }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXuatDanhSach_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel 97-2003 files (*.xls)|*.xls";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    if(File.Exists(filePath))
+                    {
+                        MessageBox.Show("Đường dẫn đã tồn tại file", "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    FileServic file = new FileServic(); 
+                    if(file.XuatDanhSachKHachHang(filePath))
+                         MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

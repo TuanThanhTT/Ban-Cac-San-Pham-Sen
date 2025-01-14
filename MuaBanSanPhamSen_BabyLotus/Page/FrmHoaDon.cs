@@ -1,9 +1,11 @@
 ﻿using BeHatSenLotus.Model;
 using MuaBanSanPhamSen_BabyLotus.Models;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -225,11 +227,6 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             try
@@ -250,7 +247,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                         txtDiaChiNhan.Text = nguoiDung.Address;
                         txtTenKH.Text = nguoiDung.FullName;
                         txtSDT.Text = nguoiDung.PhoneNumber;
-                        txtDiaChi.Text = nguoiDung.Address;
+                      //  txtDiaChi.Text = nguoiDung.Address;
 
                     }
                     var nv = context.Employees.Find(Convert.ToInt32(maNV));
@@ -264,6 +261,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     if (donhang!=null)
                     {
                         txtNgayLap.Text = donhang.CreateDate.ToString("dd/MM/yyyy");
+                        txtDiaChi.Text = donhang.OrderId + "";
                     }
 
                     var dsDonHang = context.OrderItems.Where(s=>s.OrderId.ToString() == maHoaDon).ToList();
@@ -420,6 +418,42 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
 
                 LoadTableHoaDon();
             }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maHD = txtDiaChi.Text.Trim();
+                if(!string.IsNullOrEmpty(maHD) )
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel 97-2003 files (*.xls)|*.xls";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveFileDialog.FileName;
+                        if(File.Exists(filePath) )
+                        {
+                            MessageBox.Show("Đường dẫn đã tồn tại file", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        FileServic file = new FileServic();
+                        
+                        if(file.XuatHoaDon(Convert.ToInt32(maHD), filePath))
+                        {
+                            MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
+                }
+
+              
+
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

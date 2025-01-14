@@ -314,5 +314,81 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDoiAnh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (user != null)
+                {
+                    OpenFileDialog openFile = new OpenFileDialog();
+                    openFile.InitialDirectory = "c:\\";
+                    openFile.Filter = "PNG Files|*.png|GIF Files|*.gif|JPG Files|*.jpg";
+                    openFile.Multiselect = false;
+                    openFile.FilterIndex = 3;
+
+
+                    if (openFile.ShowDialog() == DialogResult.OK)
+                    {
+
+                        string sourceFile = openFile.FileName;
+                        string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Upload", Path.GetFileName(sourceFile));
+                        if (File.Exists(destFile))
+                        {
+                            destFile = Path.Combine(Directory.GetCurrentDirectory(), "Upload", Path.GetFileNameWithoutExtension(sourceFile) + "_" + DateTime.Now.Ticks + Path.GetExtension(sourceFile));
+                        }
+                        File.Copy(sourceFile, destFile, true);
+                        using (var context = new BanSanPhamSen())
+                        {
+                            var nguoiDung = context.Users.Find(user.UserId);
+                            if (nguoiDung != null)
+                            {
+                                var acc = context.Account.Where(s => s.UserAccountId == nguoiDung.UserId).FirstOrDefault();
+                                if (acc != null)
+                                {
+                                    acc.avartar = Path.GetFileName(destFile);
+                                    context.SaveChanges();
+                                    loadInfo();
+                                    loadUser();
+                                    MessageBox.Show("Cập nhật ảnh thành công!", "Thành Công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                                }
+
+                            }
+
+
+                        }
+
+                    }
+
+
+
+                }
+            }
+            catch(Exception ex) { 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void loadUser()
+        {
+            try
+            {
+                using(var context = new BanSanPhamSen())
+                {
+                    var nguoiDung = context.Users.Find(user.UserId);
+                    if (nguoiDung != null)
+                    {
+                        user = nguoiDung;
+                    }
+
+                }
+
+            }catch(Exception ex) {
+            
+            MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

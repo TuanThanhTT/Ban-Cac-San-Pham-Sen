@@ -25,13 +25,94 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
         public void init()
         {
-            if (user == null)
+            if (user != null)
             {
                 loadGioHang();
                 loadTableDonHangChoDuyet();
+                loadTableDonHangDaDat();
             }
           
         }
+
+        public async void loadTableDonHangDaDat()
+        {
+            try
+            {
+                var ds = await getDanhSachDonHangDaDat();
+                if(ds!= null) { 
+                
+                    var data = new DataTable();
+                    data.Columns.Add("Id", typeof(int));
+                    data.Columns.Add("Name", typeof(string));
+                    data.Columns.Add("SoLuong", typeof(int));
+                    data.Columns.Add("TongTien", typeof(decimal));
+                    data.Columns.Add("TrangThai",typeof(string));
+
+                    if(ds.Count>0)
+                    {
+                        foreach(var item in ds)
+                        {
+                            data.Rows.Add(item.Id, item.tenSanPham, item.soLuong, item.tongTien, item.trangThai);    
+                        }
+
+                        GVDonHangDaDat.DataSource= data;    
+                    }
+
+                }
+
+
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async Task<List<DonHangDaDat>> getDanhSachDonHangDaDat()
+        {
+            try
+            {
+                if(user!= null)
+                {
+                    using (var context = new BanSanPhamSen())
+                    {
+                        var ds = await(from nguoiDung in context.Users
+                                 join dh in context.Orders
+                                 on nguoiDung.UserId equals dh.UserId
+                                 join ct in context.OrderItems
+                                 on dh.OrderId equals ct.OrderId
+                                 join sp in context.Product
+                                 on ct.ProductId equals sp.productId
+                                 where nguoiDung.UserId == user.UserId && dh.EmployeeId != null
+                                 select new DonHangDaDat
+                                 {
+                                     Id = ct.OrderItemId,
+                                     gia = sp.price,
+                                     maDonHang = dh.OrderId,
+                                     maSanPham= sp.productId,
+                                     ngayDat = dh.CreateDate,
+                                     soLuong = ct.Quantity,
+                                     tenSanPham = sp.productName,
+                                     tongTien = dh.totalAmount,
+                                     trangThai = "Đã duyệt"                                  
+                                 }).Distinct().ToListAsync();
+                        if (ds != null) return ds;
+
+                    }
+                }
+             
+
+
+
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
+
+
+
+
+
         public async  void loadGioHang()
         {
             try
@@ -39,7 +120,6 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
               
                 if (user != null)
                 {
-                    MessageBox.Show("uset khac null");
                    using(var context = new BanSanPhamSen())
                     {
                         var giohang = await context.GioHangs.Where(s => s.userId == user.UserId).FirstOrDefaultAsync();
@@ -399,8 +479,9 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             txtSoLuong.Text = string.Empty;
             txtTongTien.Text = string.Empty;
             txtTenSanPham.Text = string.Empty;
-           loadGioHang();
-           
+            init();
+
+
         }
 
         private void btnXem_Click(object sender, EventArgs e)

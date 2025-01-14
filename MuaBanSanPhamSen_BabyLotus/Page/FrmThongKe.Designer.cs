@@ -46,7 +46,7 @@
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtDoanhThuDaBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoLuongHoaDonLap = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThongKeNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVienXem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,12 +64,15 @@
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox6 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.GvKhachHang = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXuatFileSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.btnXemSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.txtSanPhamDoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSanPhamSoLuongBan = new Guna.UI2.WinForms.Guna2TextBox();
@@ -79,18 +82,15 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.GVSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtDoanhThuThangHienTai = new Guna.UI2.WinForms.Guna2TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -144,7 +144,7 @@
             this.guna2Panel9.BackColor = System.Drawing.Color.White;
             this.guna2Panel9.Controls.Add(this.txtDoanhThuDaBan);
             this.guna2Panel9.Controls.Add(this.txtSoLuongHoaDonLap);
-            this.guna2Panel9.Controls.Add(this.guna2Button4);
+            this.guna2Panel9.Controls.Add(this.btnThongKeNhanVien);
             this.guna2Panel9.Controls.Add(this.btnNhanVienXem);
             this.guna2Panel9.Controls.Add(this.guna2Separator3);
             this.guna2Panel9.Controls.Add(this.label7);
@@ -206,25 +206,26 @@
             this.txtSoLuongHoaDonLap.Size = new System.Drawing.Size(363, 50);
             this.txtSoLuongHoaDonLap.TabIndex = 3;
             // 
-            // guna2Button4
+            // btnThongKeNhanVien
             // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Green;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.Location = new System.Drawing.Point(279, 3);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(123, 45);
-            this.guna2Button4.TabIndex = 2;
-            this.guna2Button4.Text = "Xuất file";
-            this.guna2Button4.UseTransparentBackground = true;
+            this.btnThongKeNhanVien.Animated = true;
+            this.btnThongKeNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.btnThongKeNhanVien.BorderRadius = 10;
+            this.btnThongKeNhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKeNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKeNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThongKeNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongKeNhanVien.FillColor = System.Drawing.Color.Green;
+            this.btnThongKeNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThongKeNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnThongKeNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeNhanVien.Image")));
+            this.btnThongKeNhanVien.Location = new System.Drawing.Point(279, 3);
+            this.btnThongKeNhanVien.Name = "btnThongKeNhanVien";
+            this.btnThongKeNhanVien.Size = new System.Drawing.Size(123, 45);
+            this.btnThongKeNhanVien.TabIndex = 2;
+            this.btnThongKeNhanVien.Text = "Xuất file";
+            this.btnThongKeNhanVien.UseTransparentBackground = true;
+            this.btnThongKeNhanVien.Click += new System.EventHandler(this.btnThongKeNhanVien_Click);
             // 
             // btnNhanVienXem
             // 
@@ -517,6 +518,30 @@
             this.GvKhachHang.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvKhachHang_CellContentClick);
             // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Id";
+            this.Column6.HeaderText = "Mã khách hàng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Name";
+            this.Column7.HeaderText = "Họ tên";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Phone";
+            this.Column8.HeaderText = "Số điện thoại";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
@@ -571,7 +596,7 @@
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.White;
-            this.guna2Panel7.Controls.Add(this.guna2Button2);
+            this.guna2Panel7.Controls.Add(this.btnXuatFileSanPham);
             this.guna2Panel7.Controls.Add(this.btnXemSanPham);
             this.guna2Panel7.Controls.Add(this.txtSanPhamDoanhThu);
             this.guna2Panel7.Controls.Add(this.txtSanPhamSoLuongBan);
@@ -585,26 +610,26 @@
             this.guna2Panel7.Size = new System.Drawing.Size(239, 385);
             this.guna2Panel7.TabIndex = 1;
             // 
-            // guna2Button2
+            // btnXuatFileSanPham
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Green;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(14, 323);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(222, 45);
-            this.guna2Button2.TabIndex = 3;
-            this.guna2Button2.Text = "Xuất file";
-            this.guna2Button2.UseTransparentBackground = true;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnXuatFileSanPham.Animated = true;
+            this.btnXuatFileSanPham.BackColor = System.Drawing.Color.Transparent;
+            this.btnXuatFileSanPham.BorderRadius = 10;
+            this.btnXuatFileSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatFileSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatFileSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXuatFileSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXuatFileSanPham.FillColor = System.Drawing.Color.Green;
+            this.btnXuatFileSanPham.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXuatFileSanPham.ForeColor = System.Drawing.Color.White;
+            this.btnXuatFileSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatFileSanPham.Image")));
+            this.btnXuatFileSanPham.Location = new System.Drawing.Point(14, 323);
+            this.btnXuatFileSanPham.Name = "btnXuatFileSanPham";
+            this.btnXuatFileSanPham.Size = new System.Drawing.Size(222, 45);
+            this.btnXuatFileSanPham.TabIndex = 3;
+            this.btnXuatFileSanPham.Text = "Xuất file";
+            this.btnXuatFileSanPham.UseTransparentBackground = true;
+            this.btnXuatFileSanPham.Click += new System.EventHandler(this.btnXuatFileSanPham_Click);
             // 
             // btnXemSanPham
             // 
@@ -791,6 +816,38 @@
             this.GVSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GVSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Mã số";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Tên sản phảm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "TongTien";
+            this.Column10.HeaderText = "Tổng Tiền";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "SoLuongBan";
+            this.Column11.HeaderText = "Số Lượng Bán";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
@@ -868,62 +925,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Doanh thu tháng hiện tại";
             // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Id";
-            this.Column6.HeaderText = "Mã khách hàng";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Name";
-            this.Column7.HeaderText = "Họ tên";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Phone";
-            this.Column8.HeaderText = "Số điện thoại";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "Mã số";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "Tên sản phảm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "TongTien";
-            this.Column10.HeaderText = "Tổng Tiền";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "SoLuongBan";
-            this.Column11.HeaderText = "Số Lượng Bán";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
             // FrmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -983,12 +984,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSanPhamSoLuongBan;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button btnXemSanPham;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnXuatFileSanPham;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2TextBox txtDoanhThuDaBan;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuongHoaDonLap;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnThongKeNhanVien;
         private Guna.UI2.WinForms.Guna2Button btnNhanVienXem;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private System.Windows.Forms.Label label7;

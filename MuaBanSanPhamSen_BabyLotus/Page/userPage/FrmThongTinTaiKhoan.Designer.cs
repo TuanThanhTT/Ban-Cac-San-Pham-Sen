@@ -46,19 +46,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnDoiPass = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbUsserName = new System.Windows.Forms.Label();
-            this.lbFullName = new System.Windows.Forms.Label();
-            this.lbUserID = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PTBAvarTar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lbUsserName = new System.Windows.Forms.Label();
             this.btnDoiAnh = new Guna.UI2.WinForms.Guna2Button();
+            this.lbFullName = new System.Windows.Forms.Label();
+            this.lbUserID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.CBBEditGioiTinh = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -334,37 +334,6 @@
             this.guna2Panel3.Size = new System.Drawing.Size(549, 495);
             this.guna2Panel3.TabIndex = 0;
             // 
-            // lbUsserName
-            // 
-            this.lbUsserName.AutoSize = true;
-            this.lbUsserName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsserName.Location = new System.Drawing.Point(214, 222);
-            this.lbUsserName.Name = "lbUsserName";
-            this.lbUsserName.Size = new System.Drawing.Size(64, 21);
-            this.lbUsserName.TabIndex = 4;
-            this.lbUsserName.Text = "100552";
-            // 
-            // lbFullName
-            // 
-            this.lbFullName.AutoSize = true;
-            this.lbFullName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFullName.Location = new System.Drawing.Point(214, 163);
-            this.lbFullName.Name = "lbFullName";
-            this.lbFullName.Size = new System.Drawing.Size(64, 21);
-            this.lbFullName.TabIndex = 4;
-            this.lbFullName.Text = "100552";
-            // 
-            // lbUserID
-            // 
-            this.lbUserID.AutoSize = true;
-            this.lbUserID.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserID.ForeColor = System.Drawing.Color.Black;
-            this.lbUserID.Location = new System.Drawing.Point(214, 101);
-            this.lbUserID.Name = "lbUserID";
-            this.lbUserID.Size = new System.Drawing.Size(64, 21);
-            this.lbUserID.TabIndex = 4;
-            this.lbUserID.Text = "100552";
-            // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Animated = true;
@@ -433,18 +402,6 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Điện thoại";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(214, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên Tài khoản:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -497,6 +454,16 @@
             this.guna2GroupBox1.Text = "Thông Tin Tài khoản";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
+            // lbUsserName
+            // 
+            this.lbUsserName.AutoSize = true;
+            this.lbUsserName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsserName.Location = new System.Drawing.Point(214, 222);
+            this.lbUsserName.Name = "lbUsserName";
+            this.lbUsserName.Size = new System.Drawing.Size(64, 21);
+            this.lbUsserName.TabIndex = 4;
+            this.lbUsserName.Text = "100552";
+            // 
             // btnDoiAnh
             // 
             this.btnDoiAnh.Animated = true;
@@ -514,6 +481,40 @@
             this.btnDoiAnh.Size = new System.Drawing.Size(151, 44);
             this.btnDoiAnh.TabIndex = 1;
             this.btnDoiAnh.Text = "Đổi ảnh";
+            this.btnDoiAnh.Click += new System.EventHandler(this.btnDoiAnh_Click);
+            // 
+            // lbFullName
+            // 
+            this.lbFullName.AutoSize = true;
+            this.lbFullName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFullName.Location = new System.Drawing.Point(214, 163);
+            this.lbFullName.Name = "lbFullName";
+            this.lbFullName.Size = new System.Drawing.Size(64, 21);
+            this.lbFullName.TabIndex = 4;
+            this.lbFullName.Text = "100552";
+            // 
+            // lbUserID
+            // 
+            this.lbUserID.AutoSize = true;
+            this.lbUserID.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserID.ForeColor = System.Drawing.Color.Black;
+            this.lbUserID.Location = new System.Drawing.Point(214, 101);
+            this.lbUserID.Name = "lbUserID";
+            this.lbUserID.Size = new System.Drawing.Size(64, 21);
+            this.lbUserID.TabIndex = 4;
+            this.lbUserID.Text = "100552";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(214, 197);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên Tài khoản:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // guna2Panel2
             // 

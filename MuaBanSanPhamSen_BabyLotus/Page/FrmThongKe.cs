@@ -1,9 +1,11 @@
 ﻿using BeHatSenLotus.Model;
 using MuaBanSanPhamSen_BabyLotus.Models;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -63,10 +65,15 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             {
                 using (var context = new BanSanPhamSen())
                 {
+                    var currentMonth = DateTime.Now.Month;
+                    var currentYear = DateTime.Now.Year;
+
                     var ds = await (from emp in context.Employees
                                     join donhang in context.Orders
                                     on emp.EmployeeId equals donhang.EmployeeId
                                     where donhang.EmployeeId != null
+                                          && donhang.CreateDate.Month == currentMonth
+                                          && donhang.CreateDate.Year == currentYear
                                     group donhang by new { emp.EmployeeId, emp.FullName } into g
                                     select new NhanVienTheoDoanhThu
                                     {
@@ -74,9 +81,9 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                                         tenNhanVien = g.Key.FullName,
                                         soHoaDonLap = g.Count(),
                                         doanhThu = g.Sum(x => x.totalAmount)
-                                    }).Distinct()
-                 .OrderByDescending(nv => nv.doanhThu)
-                 .ToListAsync();
+                                    }).OrderByDescending(nv => nv.doanhThu)
+                                      .ToListAsync();
+
 
                     if (ds != null)
                     {
@@ -103,11 +110,6 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -346,6 +348,79 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnThongKeNhanVien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ds = await getDanhSachNhanVienTheoDoanhThu();
+
+                if (ds != null)
+                {
+                    if(ds.Count> 0) {
+
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel 97-2003 files (*.xls)|*.xls";
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = saveFileDialog.FileName;
+
+                            if (File.Exists(filePath))
+                            {
+                                MessageBox.Show("Đường dẫn đã tồn tại file", "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            FileServic file = new FileServic();
+                            if (file.XuatDanhSachNhanVienDoanhThu(filePath, ds))
+                                MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
+        }
+
+        private async void btnXuatFileSanPham_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ds = await getDanhSachSanPham();
+
+                if (ds != null)
+                {
+                    if (ds.Count > 0)
+                    {
+
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel 97-2003 files (*.xls)|*.xls";
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = saveFileDialog.FileName;
+
+                            if (File.Exists(filePath))
+                            {
+                                MessageBox.Show("Đường dẫn đã tồn tại file", "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            FileServic file = new FileServic();
+                            if (file.XuatDanhSachSanPhamDoanhThuCao(filePath, ds))
+                                MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

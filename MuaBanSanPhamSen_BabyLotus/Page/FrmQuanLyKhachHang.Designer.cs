@@ -72,7 +72,7 @@
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnXemChonKH = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhSachKhoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBienLai = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXuatDanhSach = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -704,7 +704,7 @@
             this.guna2GroupBox2.Controls.Add(this.guna2VSeparator1);
             this.guna2GroupBox2.Controls.Add(this.btnXemChonKH);
             this.guna2GroupBox2.Controls.Add(this.btnDanhSachKhoa);
-            this.guna2GroupBox2.Controls.Add(this.btnBienLai);
+            this.guna2GroupBox2.Controls.Add(this.btnXuatDanhSach);
             this.guna2GroupBox2.Controls.Add(this.guna2Separator1);
             this.guna2GroupBox2.Controls.Add(this.txtThanhTien);
             this.guna2GroupBox2.Controls.Add(this.label12);
@@ -780,24 +780,25 @@
             this.btnDanhSachKhoa.Text = "Xem";
             this.btnDanhSachKhoa.Click += new System.EventHandler(this.btnDanhSachKhoa_Click);
             // 
-            // btnBienLai
+            // btnXuatDanhSach
             // 
-            this.btnBienLai.Animated = true;
-            this.btnBienLai.BorderRadius = 10;
-            this.btnBienLai.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBienLai.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBienLai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBienLai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBienLai.FillColor = System.Drawing.Color.Green;
-            this.btnBienLai.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnBienLai.ForeColor = System.Drawing.Color.White;
-            this.btnBienLai.Image = ((System.Drawing.Image)(resources.GetObject("btnBienLai.Image")));
-            this.btnBienLai.Location = new System.Drawing.Point(13, 272);
-            this.btnBienLai.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBienLai.Name = "btnBienLai";
-            this.btnBienLai.Size = new System.Drawing.Size(161, 55);
-            this.btnBienLai.TabIndex = 4;
-            this.btnBienLai.Text = "Xuất excel";
+            this.btnXuatDanhSach.Animated = true;
+            this.btnXuatDanhSach.BorderRadius = 10;
+            this.btnXuatDanhSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatDanhSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatDanhSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXuatDanhSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXuatDanhSach.FillColor = System.Drawing.Color.Green;
+            this.btnXuatDanhSach.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnXuatDanhSach.ForeColor = System.Drawing.Color.White;
+            this.btnXuatDanhSach.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatDanhSach.Image")));
+            this.btnXuatDanhSach.Location = new System.Drawing.Point(13, 272);
+            this.btnXuatDanhSach.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXuatDanhSach.Name = "btnXuatDanhSach";
+            this.btnXuatDanhSach.Size = new System.Drawing.Size(161, 55);
+            this.btnXuatDanhSach.TabIndex = 4;
+            this.btnXuatDanhSach.Text = "Xuất excel";
+            this.btnXuatDanhSach.Click += new System.EventHandler(this.btnXuatDanhSach_Click);
             // 
             // guna2Separator1
             // 
@@ -993,7 +994,7 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2Button btnDanhSachKhoa;
-        private Guna.UI2.WinForms.Guna2Button btnBienLai;
+        private Guna.UI2.WinForms.Guna2Button btnXuatDanhSach;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

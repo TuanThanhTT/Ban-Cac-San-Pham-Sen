@@ -277,11 +277,9 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     if(acc != null && !string.IsNullOrEmpty(acc.avartar))
                     {
                         string imgs = acc.avartar.Trim();
-                        var listImg = imgs.Split(';').ToArray();
-                        if(listImg.Length > 0)
-                        {
-                            string fileName = listImg[0];
-                            var filePath = Path.Combine(Directory.GetCurrentDirectory(),"Image", fileName);
+                       
+                          
+                            var filePath = Path.Combine(Directory.GetCurrentDirectory(),"Upload", imgs.Trim());
                             if (File.Exists(filePath))
                             {
                                 if (PTB_hinhanh.Image != null)
@@ -290,7 +288,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                                 }
                                 PTB_hinhanh.Image = Image.FromFile(filePath);   
                             }
-                        }
+                       
 
                     }
                 }

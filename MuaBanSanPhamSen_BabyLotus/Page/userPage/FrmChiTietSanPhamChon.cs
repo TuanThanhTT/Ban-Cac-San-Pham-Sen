@@ -176,8 +176,15 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                                 giohang = new GioHang
                                 {
                                     userId = user.UserId,
-                                    User = user
+                                    User = context.Users.SingleOrDefault(u => u.UserId == user.UserId)
                                 };
+
+                                if (giohang.User == null)
+                                {
+                                    // Nếu không tìm thấy người dùng, ném lỗi hoặc xử lý tương ứng
+                                    throw new Exception("User không tồn tại.");
+                                }
+
                                 context.GioHangs.Add(giohang);
                                 context.SaveChanges();
                             }
@@ -205,17 +212,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
                             context.SaveChanges();
                             MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Cập nhật số lượng sản phẩm trong kho
-                            //var sanPham = context.Product.Find(pro.productId);
-                            //if (sanPham != null)
-                            //{
-                            //    sanPham.quantity -= soLuong;
-                            //    context.SaveChanges();
-                            //    lbSoLuongTon.Text = sanPham.quantity+"";
-                            //    MessageBox.Show("Đã cập nhật giỏ hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //}
                         }
+
                     }
 
 
