@@ -17,32 +17,42 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
         public FrmDonHang(User user, FrmUser main)
         {
-            InitializeComponent();
             this.user = user;
             this.main = main;
-            loadGioHang();
-            loadTableDonHangChoDuyet();
+            InitializeComponent();
+            init();
         }
 
+        public void init()
+        {
+            if (user == null)
+            {
+                loadGioHang();
+                loadTableDonHangChoDuyet();
+            }
+          
+        }
         public async  void loadGioHang()
         {
             try
             {
+              
                 if (user != null)
                 {
+                    MessageBox.Show("uset khac null");
                    using(var context = new BanSanPhamSen())
                     {
                         var giohang = await context.GioHangs.Where(s => s.userId == user.UserId).FirstOrDefaultAsync();
                         if (giohang != null)
                         {
                             var danhsachSanPham = await getChiTietDonHang(giohang.Id);
-                            if(danhsachSanPham.Count> 0)
+                            if(danhsachSanPham.Count> 0 && danhsachSanPham!= null)
                             {
                                 LayoutGioHang.Controls.Clear();
                                 Decimal tongTien = 0;
                                 foreach (var item in danhsachSanPham)
                                 {
-                                    var f = new IconDonHang(item, LayoutGioHang);
+                                    var f = new IconDonHang(item, LayoutGioHang,this);
                                     LayoutGioHang.Controls.Add(f);
 
                                     var sanPham = context.Product.Where(s=>s.productId == item.productId).First();
@@ -57,6 +67,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                                 txtTongTienGioHang.Text = tongTien.ToString()+" vnđ";
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("gio hàng null");
+                        }
                     }
             
                 }
@@ -65,7 +79,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex+"","Lỗi");
             }
         }
 
@@ -254,7 +268,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);    
+                MessageBox.Show(ex+"");    
             }
         }
 
@@ -361,17 +375,32 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex+"", "Lỗi");
             }
         }
-
-        private async void btnLamMoi_Click(object sender, EventArgs e)
+        public void loadThongTinUsser()
         {
+            if (user != null)
+            {
+                using(var c = new BanSanPhamSen())
+                {
+                    var nguoidung = c.Users.Find(user.UserId);
+                    if (nguoidung != null)
+                    {
+                        user = nguoidung;
+                    }
+                }
+            }
+        }
+        private  void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            loadThongTinUsser();
             txtNgayMua.Text = "";
             txtSoLuong.Text = string.Empty;
             txtTongTien.Text = string.Empty;
             txtTenSanPham.Text = string.Empty;
            loadGioHang();
+           
         }
 
         private void btnXem_Click(object sender, EventArgs e)

@@ -959,7 +959,7 @@
         private Guna.UI2.WinForms.Guna2Button txtDatHang;
         private Guna.UI2.WinForms.Guna2Button txtCapNhatThongTin;
         private Guna.UI2.WinForms.Guna2Button txtXoaTatCa;
-        private Guna.UI2.WinForms.Guna2TextBox txtTongTienGioHang;
+        public Guna.UI2.WinForms.Guna2TextBox txtTongTienGioHang;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;

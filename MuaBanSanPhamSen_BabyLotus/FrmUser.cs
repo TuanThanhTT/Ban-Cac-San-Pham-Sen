@@ -172,5 +172,13 @@ namespace MuaBanSanPhamSen_BabyLotus
             var form = new FrmThongTinTaiKhoan(user);
             addTabPage(tabMain, form);
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            if (user != null)
+            {
+                lbHello.Text = user.FullName;
+            }
+        }
     }
 }

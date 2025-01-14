@@ -21,6 +21,22 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             loadCombobox();
         }
 
+        public void loadLaiUser()
+        {
+            if (user != null)
+            {
+                using(var context = new BanSanPhamSen())
+                {
+                    var nguoiDUng = context.Users.Find(user.UserId);
+                    if(nguoiDUng != null)
+                    {
+                        user = nguoiDUng;
+                    }
+                }
+            }
+        }
+
+
         public async void loadInfo()
         {
             try
@@ -42,7 +58,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                             llbTaiKhaonUsserName.Text = acc.username.ToString();
 
                             txtEditHoten.Text = user.FullName;
-                            txtEditDiaChi.Text = user.Address.ToString();
+                            txtEditDiaChi.Text = user.Address;
                             txteditPhone.Text = user.PhoneNumber;
                             txtEditEmail.Text = user.Email;
                             int gioiTinh = -1;
@@ -184,8 +200,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
 
                         context.SaveChanges();
                         MessageBox.Show("cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadInfo();
-                    
+                        loadLaiUser();
+                        loadInfo(); 
+
+
                     }
                 }
 

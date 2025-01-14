@@ -1,6 +1,6 @@
 ﻿using BeHatSenLotus.Model;
 using System;
-using System.Linq;
+using System.Data.Entity;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -15,7 +15,7 @@ namespace MuaBanSanPhamSen_BabyLotus
             this.Text = "Đăng nhập";
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private async void btnDangNhap_Click(object sender, EventArgs e)
         {
             try
             {
@@ -43,17 +43,21 @@ namespace MuaBanSanPhamSen_BabyLotus
 
                 using(var context = new BanSanPhamSen())
                 {
-                    MessageBox.Show("Username nhap vao la: " + userName);
-                    var acc = context.Account
-                        .Where(s => s.username == userName)
-                         .FirstOrDefault();
+                     var ds = await context.Account.ToListAsync();
+                    var acc = new Account();
+                    foreach(var item in ds)
+                    {
+                        if(item.username == userName)
+                        {
+                            acc = item;
+                            break;
+                        }
+                    }
 
-                    MessageBox.Show("ket qua: " + (acc.username == userName));
-                    MessageBox.Show("Username nhap vao la: " + acc.username);
+                    
                     if (acc != null )
                     {
                         
-                        MessageBox.Show("pas và pas nhap: "+acc.passs+" - "+pass);
                         if(acc.passs.Trim() == pass.Trim())
                         {
                             if (acc.EmployAccountId== null)

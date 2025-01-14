@@ -11,8 +11,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
     {
         private ChiTietGioHang ct;
         private FlowLayoutPanel main;
-        public IconDonHang(ChiTietGioHang ct, FlowLayoutPanel donHang)
+        private FrmDonHang dh;
+        public IconDonHang(ChiTietGioHang ct, FlowLayoutPanel donHang, FrmDonHang dh)
         {
+            this.dh= dh;
             this.ct = ct;   
             this.main = donHang; 
             InitializeComponent();
@@ -85,6 +87,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                         context.ChiTietGioHang.Remove(chitietDonHang);
                         context.SaveChanges();
                         MessageBox.Show("Xóa đon hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dh.loadGioHang();
                     }
                    
                 }

@@ -385,7 +385,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                         var list  = new List<ThongTinDonHangDuyet>();
                         foreach(var item in ds)
                         {
-                            if(!ContainsIgnoreCaseAndPunctuation(item.tenKhachHang, chuoiTim))
+                            if(ContainsIgnoreCaseAndPunctuation(item.tenKhachHang, chuoiTim))
                             {
                                 list.Add(item);
                             }
