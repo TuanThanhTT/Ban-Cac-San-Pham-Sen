@@ -43,10 +43,18 @@ namespace MuaBanSanPhamSen_BabyLotus
 
                 using(var context = new BanSanPhamSen())
                 {
-                    var acc = context.Account.Where(s=>s.username == userName).FirstOrDefault();
-                    if(acc != null )
+                    MessageBox.Show("Username nhap vao la: " + userName);
+                    var acc = context.Account
+                        .Where(s => s.username == userName)
+                         .FirstOrDefault();
+
+                    MessageBox.Show("ket qua: " + (acc.username == userName));
+                    MessageBox.Show("Username nhap vao la: " + acc.username);
+                    if (acc != null )
                     {
-                        if(acc.passs == pass)
+                        
+                        MessageBox.Show("pas và pas nhap: "+acc.passs+" - "+pass);
+                        if(acc.passs.Trim() == pass.Trim())
                         {
                             if (acc.EmployAccountId== null)
                             {
@@ -67,10 +75,13 @@ namespace MuaBanSanPhamSen_BabyLotus
 
                                 }
                             }
-                           
-                           
-
-                           
+                        }
+                        else
+                        {
+                            txtPass.PlaceholderForeColor = System.Drawing.Color.Red;
+                            txtPass.BorderColor = System.Drawing.Color.Red;
+                            txtPass.PlaceholderText = "Mật khẩu không chính xác";
+                            txtPass.Text = "";
                             
                         }
                     }

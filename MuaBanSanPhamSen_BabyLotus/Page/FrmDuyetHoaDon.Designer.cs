@@ -35,6 +35,11 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GVDuyet = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDuyet = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
@@ -43,20 +48,15 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.txtTenKh = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNgayLap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaDon = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTongtien = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTim = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaKh = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMaDon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVDuyet)).BeginInit();
@@ -149,6 +149,46 @@
             this.GVDuyet.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GVDuyet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVDuyet_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaDon";
+            this.Column5.HeaderText = "Mã đơn hàng";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Tên khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TongTien";
+            this.Column3.HeaderText = "Tồng tiền";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NgayLap";
+            this.Column4.HeaderText = "Ngày lập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // btnDuyet
             // 
             this.btnDuyet.BackColor = System.Drawing.Color.White;
@@ -193,6 +233,7 @@
             this.btnTim.TabIndex = 2;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseTransparentBackground = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnLamMoi
             // 
@@ -224,7 +265,7 @@
             this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnXem.FillColor = System.Drawing.Color.Navy;
             this.btnXem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnXem.ForeColor = System.Drawing.Color.White;
             this.btnXem.Location = new System.Drawing.Point(239, 285);
@@ -275,7 +316,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseTransparentBackground = true;
-            this.btnXoa.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtTenKh
             // 
@@ -327,6 +368,31 @@
             this.txtNgayLap.Size = new System.Drawing.Size(329, 50);
             this.txtNgayLap.TabIndex = 1;
             // 
+            // txtMaDon
+            // 
+            this.txtMaDon.BorderColor = System.Drawing.Color.Black;
+            this.txtMaDon.BorderRadius = 10;
+            this.txtMaDon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDon.DefaultText = "";
+            this.txtMaDon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDon.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDon.Location = new System.Drawing.Point(1199, 17);
+            this.txtMaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaDon.Name = "txtMaDon";
+            this.txtMaDon.PasswordChar = '\0';
+            this.txtMaDon.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtMaDon.PlaceholderText = "";
+            this.txtMaDon.ReadOnly = true;
+            this.txtMaDon.SelectedText = "";
+            this.txtMaDon.Size = new System.Drawing.Size(177, 50);
+            this.txtMaDon.TabIndex = 1;
+            // 
             // txtTongtien
             // 
             this.txtTongtien.BorderColor = System.Drawing.Color.Black;
@@ -366,7 +432,7 @@
             this.txtTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTim.ForeColor = System.Drawing.Color.Black;
             this.txtTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTim.Location = new System.Drawing.Point(562, 280);
+            this.txtTim.Location = new System.Drawing.Point(582, 280);
             this.txtTim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTim.Name = "txtTim";
             this.txtTim.PasswordChar = '\0';
@@ -400,6 +466,16 @@
             this.txtMaKh.SelectedText = "";
             this.txtMaKh.Size = new System.Drawing.Size(329, 50);
             this.txtMaKh.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1073, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã đơn";
             // 
             // label4
             // 
@@ -441,81 +517,6 @@
             this.label1.Size = new System.Drawing.Size(144, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã khách hàng";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MaDon";
-            this.Column5.HeaderText = "Mã đơn hàng";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "Tên khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TongTien";
-            this.Column3.HeaderText = "Tồng tiền";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NgayLap";
-            this.Column4.HeaderText = "Ngày lập";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1073, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Mã đơn";
-            // 
-            // txtMaDon
-            // 
-            this.txtMaDon.BorderColor = System.Drawing.Color.Black;
-            this.txtMaDon.BorderRadius = 10;
-            this.txtMaDon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDon.DefaultText = "";
-            this.txtMaDon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDon.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDon.Location = new System.Drawing.Point(1199, 17);
-            this.txtMaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaDon.Name = "txtMaDon";
-            this.txtMaDon.PasswordChar = '\0';
-            this.txtMaDon.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtMaDon.PlaceholderText = "";
-            this.txtMaDon.ReadOnly = true;
-            this.txtMaDon.SelectedText = "";
-            this.txtMaDon.Size = new System.Drawing.Size(177, 50);
-            this.txtMaDon.TabIndex = 1;
             // 
             // FrmDuyetHoaDon
             // 

@@ -99,12 +99,19 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                         var gioHang = context.GioHangs.Where(s => s.userId == user.UserId).FirstOrDefault();
                         if (gioHang != null)
                         {
-                            var dsSanPham = context.ChiTietGioHang.Where(s => s.gioHangId == gioHang.Id).ToList(); 
-                            context.ChiTietGioHang.RemoveRange(dsSanPham);
-                            context.SaveChanges();
-                            MessageBox.Show("Xóa giỏ hàng thành công","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                            LayoutGioHang.Controls.Clear();
+                            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác Nhận", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes)
+                            {
+                                var dsSanPham = context.ChiTietGioHang.Where(s => s.gioHangId == gioHang.Id).ToList();
+                                context.ChiTietGioHang.RemoveRange(dsSanPham);
+                                context.SaveChanges();
+                                MessageBox.Show("Xóa giỏ hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                LayoutGioHang.Controls.Clear();
+                                txtTongTienGioHang.Text = "";
+
+                            }
+                           
                         }
                     }
                 }
@@ -188,7 +195,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                                         MessageBox.Show("Đặt hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         LayoutGioHang.Controls.Clear();
                                         loadTableDonHangChoDuyet();
-
+                                        txtTongTienGioHang.Text = "";
                                     }
                                 }
 
@@ -358,12 +365,13 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             }
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private async void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtNgayMua.Text = "";
             txtSoLuong.Text = string.Empty;
             txtTongTien.Text = string.Empty;
             txtTenSanPham.Text = string.Empty;
+           loadGioHang();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
