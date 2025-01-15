@@ -57,7 +57,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
             {
                 return await Task.Run(() =>
                 {
-                    return context.Category.ToList();
+                    return context.Category.Where(op=>op.isDelete == false).ToList();
                 });
             }
         }

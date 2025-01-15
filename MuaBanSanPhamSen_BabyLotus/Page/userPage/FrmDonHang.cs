@@ -46,13 +46,14 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                     data.Columns.Add("Name", typeof(string));
                     data.Columns.Add("SoLuong", typeof(int));
                     data.Columns.Add("TongTien", typeof(decimal));
+                    data.Columns.Add("NgayDat", typeof(string));
                     data.Columns.Add("TrangThai",typeof(string));
 
                     if(ds.Count>0)
                     {
                         foreach(var item in ds)
                         {
-                            data.Rows.Add(item.Id, item.tenSanPham, item.soLuong, item.tongTien, item.trangThai);    
+                            data.Rows.Add(item.Id, item.tenSanPham, item.soLuong, item.tongTien, item.ngayDat.ToString("dd/MM/yyyy"), item.trangThai);    
                         }
 
                         GVDonHangDaDat.DataSource= data;    

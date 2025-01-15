@@ -264,13 +264,21 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     loadGridView();
                     clear();
                 }
-
+                ClearAllErrors(ErrFrmNhanVien, this);
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi xảy ra! Lỗi : "+ ex.Message);
             }
+        }
+        private void ClearAllErrors(ErrorProvider errorProvider, Control control) 
+        {
+            errorProvider.SetError(control, string.Empty);
+            foreach (Control child in control.Controls) 
+            { 
+                ClearAllErrors(errorProvider, child); 
+            } 
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -506,7 +514,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     if (maNV != -1)
                     {
                         var nhanVien = await contxet.Employees.FindAsync(maNV);
-                        if (nhanVien != null)
+                        if (nhanVien != null && nhanVien.IsDelete == false)
                         {
                             dsNhanVien.Add(nhanVien);
                             return dsNhanVien;
@@ -517,31 +525,35 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     bool isContain = false;
                     foreach (var item in ds)
                     {
-                        //tim theo ten
-                        if (ContainsIgnoreCaseAndPunctuation(item.FullName, chuoiTim) && !isContain)
+                        if(item.IsDelete == false)
                         {
-                            dsNhanVien.Add(item);
-                            isContain = true;
+                            //tim theo ten
+                            if (ContainsIgnoreCaseAndPunctuation(item.FullName, chuoiTim) && !isContain)
+                            {
+                                dsNhanVien.Add(item);
+                                isContain = true;
+                            }
+                            //tim theo so dien thoai
+                            if (ContainsIgnoreCaseAndPunctuation(item.PhoneNumber.ToString(), chuoiTim) && !isContain)
+                            {
+                                dsNhanVien.Add(item);
+                                isContain = true;
+                            }
+                            //tim theo dia chi
+                            if (ContainsIgnoreCaseAndPunctuation(item.Address, chuoiTim) && !isContain)
+                            {
+                                dsNhanVien.Add(item);
+                                isContain = true;
+                            }
+                            //tim theo chuc vu
+                            if (ContainsIgnoreCaseAndPunctuation(item.Position, chuoiTim) && !isContain)
+                            {
+                                dsNhanVien.Add(item);
+                                isContain = true;
+                            }
+                            isContain = false;
                         }
-                        //tim theo so dien thoai
-                        if (ContainsIgnoreCaseAndPunctuation(item.PhoneNumber.ToString(), chuoiTim) && !isContain)
-                        {
-                            dsNhanVien.Add(item);
-                            isContain = true;
-                        }
-                        //tim theo dia chi
-                        if (ContainsIgnoreCaseAndPunctuation(item.Address, chuoiTim) && !isContain)
-                        {
-                            dsNhanVien.Add(item);
-                            isContain = true;
-                        }
-                        //tim theo chuc vu
-                        if (ContainsIgnoreCaseAndPunctuation(item.Position, chuoiTim) && !isContain)
-                        {
-                            dsNhanVien.Add(item);
-                            isContain = true;
-                        }
-                        isContain= false;   
+                     
                     }
                 }
 

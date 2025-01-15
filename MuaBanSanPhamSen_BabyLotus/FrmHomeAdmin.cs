@@ -127,14 +127,11 @@ namespace MuaBanSanPhamSen_BabyLotus
                     if (i >= dsSanPham.Count) break; 
                     if (dsSanPham[i] != null) 
                     {
-                        int j = 0;
-                        while (j<20)
-                        {
+                      
                             var userForm = new FrmSanPhamItem(dsSanPham[i]);
                             userForm.Margin = new Padding(20);
                             LayoutHienThiSanPham.Controls.Add(userForm);
-                            j++;
-                        }
+                        
                         
                     } 
                 } 
@@ -220,11 +217,17 @@ namespace MuaBanSanPhamSen_BabyLotus
                         loadSanPhamTim(ds);
                     }
                 }
+                else
+                {
+                    LoadInitialData();
+
+                }
 
 
 
 
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -246,14 +249,11 @@ namespace MuaBanSanPhamSen_BabyLotus
                     if (i >= dsSanPham.Count) break;
                     if (dsSanPham[i] != null)
                     {
-                        int j = 0;
-                        while (j < 20)
-                        {
+                       
                             var userForm = new FrmSanPhamItem(dsSanPham[i]);
                             userForm.Margin = new Padding(20);
                             LayoutHienThiSanPham.Controls.Add(userForm);
-                            j++;
-                        }
+                     
 
                     }
                 }

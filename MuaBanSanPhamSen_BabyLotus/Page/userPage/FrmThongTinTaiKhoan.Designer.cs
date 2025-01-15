@@ -210,7 +210,7 @@
             this.lbAcountId.AutoSize = true;
             this.lbAcountId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAcountId.ForeColor = System.Drawing.Color.Black;
-            this.lbAcountId.Location = new System.Drawing.Point(22, 117);
+            this.lbAcountId.Location = new System.Drawing.Point(23, 125);
             this.lbAcountId.Name = "lbAcountId";
             this.lbAcountId.Size = new System.Drawing.Size(64, 21);
             this.lbAcountId.TabIndex = 4;
@@ -222,7 +222,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(22, 222);
+            this.label14.Location = new System.Drawing.Point(23, 175);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 21);
             this.label14.TabIndex = 2;
@@ -258,7 +258,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(23, 157);
+            this.label11.Location = new System.Drawing.Point(23, 327);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 21);
             this.label11.TabIndex = 2;
@@ -269,7 +269,7 @@
             this.lbNgayTao.AutoSize = true;
             this.lbNgayTao.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgayTao.ForeColor = System.Drawing.Color.Black;
-            this.lbNgayTao.Location = new System.Drawing.Point(23, 252);
+            this.lbNgayTao.Location = new System.Drawing.Point(24, 205);
             this.lbNgayTao.Name = "lbNgayTao";
             this.lbNgayTao.Size = new System.Drawing.Size(64, 21);
             this.lbNgayTao.TabIndex = 4;
@@ -280,7 +280,7 @@
             this.llbTaiKhaonUsserName.AutoSize = true;
             this.llbTaiKhaonUsserName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbTaiKhaonUsserName.ForeColor = System.Drawing.Color.Black;
-            this.llbTaiKhaonUsserName.Location = new System.Drawing.Point(23, 188);
+            this.llbTaiKhaonUsserName.Location = new System.Drawing.Point(22, 372);
             this.llbTaiKhaonUsserName.Name = "llbTaiKhaonUsserName";
             this.llbTaiKhaonUsserName.Size = new System.Drawing.Size(64, 21);
             this.llbTaiKhaonUsserName.TabIndex = 4;
@@ -291,7 +291,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(23, 86);
+            this.label9.Location = new System.Drawing.Point(24, 94);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 21);
             this.label9.TabIndex = 2;

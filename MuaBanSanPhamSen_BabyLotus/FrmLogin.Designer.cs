@@ -32,6 +32,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.linkLBQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.lbRegister = new System.Windows.Forms.LinkLabel();
             this.CbHienPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLBQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -86,6 +86,20 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(345, 450);
             this.guna2Panel2.TabIndex = 2;
+            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            // 
+            // linkLBQuenMatKhau
+            // 
+            this.linkLBQuenMatKhau.AutoSize = true;
+            this.linkLBQuenMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.linkLBQuenMatKhau.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLBQuenMatKhau.Location = new System.Drawing.Point(21, 331);
+            this.linkLBQuenMatKhau.Name = "linkLBQuenMatKhau";
+            this.linkLBQuenMatKhau.Size = new System.Drawing.Size(110, 18);
+            this.linkLBQuenMatKhau.TabIndex = 4;
+            this.linkLBQuenMatKhau.TabStop = true;
+            this.linkLBQuenMatKhau.Text = "Quên mật khẩu";
+            this.linkLBQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLBQuenMatKhau_LinkClicked);
             // 
             // lbRegister
             // 
@@ -228,19 +242,6 @@
             this.label1.Size = new System.Drawing.Size(222, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
-            // 
-            // linkLBQuenMatKhau
-            // 
-            this.linkLBQuenMatKhau.AutoSize = true;
-            this.linkLBQuenMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.linkLBQuenMatKhau.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLBQuenMatKhau.Location = new System.Drawing.Point(21, 331);
-            this.linkLBQuenMatKhau.Name = "linkLBQuenMatKhau";
-            this.linkLBQuenMatKhau.Size = new System.Drawing.Size(110, 18);
-            this.linkLBQuenMatKhau.TabIndex = 4;
-            this.linkLBQuenMatKhau.TabStop = true;
-            this.linkLBQuenMatKhau.Text = "Quên mật khẩu";
-            this.linkLBQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLBQuenMatKhau_LinkClicked);
             // 
             // FrmLogin
             // 

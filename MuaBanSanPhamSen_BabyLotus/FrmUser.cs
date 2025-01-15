@@ -186,13 +186,15 @@ namespace MuaBanSanPhamSen_BabyLotus
         {
             var f = new FrmLogin();
             f.ShowDialog();
+            
         }
 
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(new ThreadStart(Logout));
-            thread.Start(); 
+         
+            thread.Start();
             this.Close();
                 
         }

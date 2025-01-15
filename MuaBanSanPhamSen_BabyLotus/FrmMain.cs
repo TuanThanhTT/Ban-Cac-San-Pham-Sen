@@ -3,6 +3,7 @@ using Guna.UI2.WinForms;
 using MuaBanSanPhamSen_BabyLotus.Page;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -21,6 +22,15 @@ namespace MuaBanSanPhamSen_BabyLotus
            
           // Đảm bảo form luôn ở trên cùng
         }
+
+        public void loadName()
+        {
+            if(employ!=null)
+            {
+                lbNameUsser.Text = employ.FullName;
+            }
+        }
+
 
         public void addTabMain()
         {
@@ -83,10 +93,36 @@ namespace MuaBanSanPhamSen_BabyLotus
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            updateBoder(btnNhanVien);
-            addTabMain();
-            var form = new FrmNhanVien();
-            addTabPage(tabMain, form);
+
+            if (employ != null)
+            {
+                using (var context = new BanSanPhamSen()) 
+                {
+                    var acc = context.Account.Where(s => s.EmployAccountId == employ.EmployeeId).FirstOrDefault();
+                    if(acc!= null)
+                    {
+                        var accper = context.AccountPermisstion.Where(s=>s.accountId == acc.accountId).FirstOrDefault();
+                        if (accper != null)
+                        {
+                            if(accper.permissitionId == 1)
+                            {
+                                updateBoder(btnNhanVien);
+                                addTabMain();
+                                var form = new FrmNhanVien();
+                                addTabPage(tabMain, form);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+           
 
         }
 
@@ -168,7 +204,7 @@ namespace MuaBanSanPhamSen_BabyLotus
         public void Logout()
         {
             var f = new FrmLogin();
-            f.Show();
+            f.ShowDialog();
         }
 
 

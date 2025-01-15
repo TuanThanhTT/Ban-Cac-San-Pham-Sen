@@ -40,7 +40,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     data.Columns.Add("TongTien", typeof(Decimal));
                     data.Columns.Add("NgayLap",typeof(string));
 
-                    if(ds.Count> 0)
+                    if(ds.Count>= 0)
                     {
                         foreach(var item in ds)
                         {
@@ -218,6 +218,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             txtMaDon.Text = "";
             txtTim.Text = "";
             loadTableDuyetHoaDon();
+
         }
 
         private async void btnDuyetHoaDon_Click(object sender, EventArgs e)
@@ -339,7 +340,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                                 context.SaveChanges();
                                 context.Orders.Remove(hoaDon);
                                 context.SaveChanges();
-                                MessageBox.Show("Xóa đơn hnagf thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Xóa đơn hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadTableDuyetHoaDon();
                             }
                         }
                     }

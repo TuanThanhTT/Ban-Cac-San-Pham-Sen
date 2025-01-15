@@ -1,4 +1,5 @@
 ﻿using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Data;
 using System.Data.Entity;
@@ -300,7 +301,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                     var acc = context.Account.Where(s=> s.UserAccountId == user.UserId).FirstOrDefault();   
                     if (acc != null)
                     {
-                        acc.passs = pass;
+                        acc.passs = MaHoaMD5.GetMd5Hash(pass);
                         context.SaveChanges();
                         MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();

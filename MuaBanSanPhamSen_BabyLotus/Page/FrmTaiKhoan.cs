@@ -386,6 +386,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 {
                     int accID = Convert.ToInt32(accountId);    
                     var id = Convert.ToInt32(CBB_EditLoaiTaiKhoan.SelectedValue.ToString());
+                    
                     if(id == 3)
                     {
                         MessageBox.Show("Không thể cập nhật quyền cho người dùng","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -398,7 +399,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                             var acc = context.Account.Find(accID);
                             if (acc != null)
                             {
-                              
+                                
 
 
                                 var accper = context.AccountPermisstion.Where(op=>op.accountId == acc.accountId).FirstOrDefault();   
@@ -411,12 +412,16 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                                     }
 
                                     // tao account pẻ mới;
-                                    
-                                    
+                                    if(accper.permissitionId == 3)
+                                    {
+                                        MessageBox.Show("Không thể cập nhật tài khoản user thành quyền khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
 
-                             
 
-                                 
+
+
+
                                     //tao accountper mới
                                     var newAccountPer = new AccountPermisstion
                                     {

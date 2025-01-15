@@ -176,7 +176,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                         if(!string.IsNullOrEmpty(acc.avartar))
                         {
                             string img = acc.avartar.Trim();
-                            string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Upload", Path.GetFileNameWithoutExtension(img) + "_" + DateTime.Now.Ticks + Path.GetExtension(img));
+                            string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Upload", img);
+                            
 
                             if (File.Exists(destFile))
                             {
@@ -184,8 +185,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                                     // Dọn dẹp hình ảnh cũ nếu có
                                     if (txtAvartar.Image != null)
                                     {
-                                    txtAvartar.Image.Dispose();
-                                    txtAvartar.Image = null;
+                                   
+                                         txtAvartar.Image = null;
                                     }
 
                                 // Tải và hiển thị hình ảnh mới
@@ -298,7 +299,51 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 }
 
             }
+           
+            btnMoKhoa.Visible = false;
+            txtKhoaTaiKhoan.Visible = true;
             loadTableKhachHang();
+        }
+
+
+        public void refresh()
+        {
+            try
+            {
+                txtDiaChi.Text = "";
+                txtDienThoai.Text = "";
+                txtEmail.Text = "";
+                txtGioiTinh.Text = "";
+                txtHoaDon.Text = "";
+                txtUserName.Text = "";
+                txtMaKH.Text = "";
+                txtTenKH.Text = "";
+                txtTim.Text = "";
+                txtThanhTien.Text = "";
+
+                if (txtAvartar.Image != null)
+                {
+
+                    txtAvartar.Image = null;
+                    string fileName = "z6047182807262_7ebb469de6142223ea29ad16e467d8bf.jpg";
+                    string destFile = Path.Combine(Directory.GetCurrentDirectory(), "Image", Path.GetFileName(fileName));
+
+                    if (File.Exists(destFile))
+                    {
+
+                        txtAvartar.Image = Image.FromFile(destFile);
+                        txtAvartar.SizeMode = PictureBoxSizeMode.StretchImage;
+                        txtAvartar.Visible = true;
+
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void GVKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -434,6 +479,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         {
             try
             {
+               // clear();
+               refresh();   
                 var ds =  getDanhSachNguoiDungBiKhoa();
                
                 loadTableKhachHangBangDanhSach(ds);
@@ -461,23 +508,44 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         {
             try
             {
+                string maKH = txtMaKH.Text.Trim();  
+                if (string.IsNullOrEmpty(maKH)) { return; }
+
+
+
                 using(var context = new BanSanPhamSen())
                 {
-                    var ds = await context.Users.ToListAsync();
-                    foreach(var item in ds)
+                  //  var ds = await context.Users.ToListAsync();
+                    //foreach(var item in ds)
+                    //{
+                    //    if (item.IsDelete)
+                    //    {
+                    //        item.IsDelete = false;
+                    //        var acc = context.Account.Where(op => op.UserAccountId.ToString() == item.UserId.ToString()).FirstOrDefault();
+                    //        if (acc != null)
+                    //            acc.IsLocked = false;
+                    //    }
+                            
+                    //}
+                    var khachHang = context.Users.Find(Convert.ToInt32(maKH));  
+                    if (khachHang != null)
                     {
-                        if(item.IsDelete)
-                            item.IsDelete= false;
-                            var acc =  context.Account.Where(op => op.UserAccountId.ToString() == item.UserId.ToString()).FirstOrDefault();
-                            acc.IsLocked= false;
+                        var acc = await  context.Account.Where(op => op.UserAccountId.ToString() == khachHang.UserId.ToString()).FirstOrDefaultAsync();
+                        if (acc != null) {
+                            khachHang.IsDelete = false;
+                            acc.IsLocked = false; 
+                            await context.SaveChangesAsync();
+                            MessageBox.Show("Mở khóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            var ds = getDanhSachNguoiDungBiKhoa();
+
+                            loadTableKhachHangBangDanhSach(ds);
+                        }
                     }
-               
-                    await context.SaveChangesAsync();
-                    MessageBox.Show("Mở khóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clear();
-                    loadTableKhachHang();
-                    btnMoKhoa.Visible = false;
-                    txtKhoaTaiKhoan.Visible = true;
+                   // await context.SaveChangesAsync();
+                   // clear();
+                    //loadTableKhachHang();
+                    //btnMoKhoa.Visible = false;
+                    //txtKhoaTaiKhoan.Visible = true;
                 }
                                      
             }catch(Exception ex)

@@ -52,7 +52,7 @@ namespace MuaBanSanPhamSen_BabyLotus
                         bool valid = false;
                         foreach(var item in ds)
                         {
-                            if(item.username == emailUser)
+                            if(item.username == userName)
                             {
                                 valid = true;
                                 break;

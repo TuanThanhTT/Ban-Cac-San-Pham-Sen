@@ -15,6 +15,7 @@ namespace MuaBanSanPhamSen_BabyLotus
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+          
         }
 
        
@@ -70,6 +71,12 @@ namespace MuaBanSanPhamSen_BabyLotus
                                 var user = context.Users.Find(acc.UserAccountId);
                                 if (user != null)
                                 {
+
+                                    if (user.IsDelete == true)
+                                    {
+                                        MessageBox.Show("Tài khoản này đã bị khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
                                     Thread thread = new Thread(new ThreadStart(() =>
                                     {
                                         var f = new FrmUser(user);
@@ -85,6 +92,11 @@ namespace MuaBanSanPhamSen_BabyLotus
                                 var employ = context.Employees.Find(acc.EmployAccountId);
                                 if (employ != null)
                                 {
+                                    if(employ.IsDelete== true)
+                                    {
+                                        MessageBox.Show("Tài khoản này đã bị khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
                                   
                                     Thread thread = new Thread(new ThreadStart(() =>
                                     {
@@ -187,6 +199,11 @@ namespace MuaBanSanPhamSen_BabyLotus
             thread.Start();
             
             this.Close();
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

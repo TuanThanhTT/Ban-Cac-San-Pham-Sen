@@ -292,7 +292,6 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmUser";
             this.Text = "FrmUser";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUser_FormClosing);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBAvartar)).EndInit();

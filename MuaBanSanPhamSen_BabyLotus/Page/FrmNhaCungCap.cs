@@ -157,7 +157,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                 }
 
                 string sdt = txtDienThoai.Text;
-                MessageBox.Show("sdt hop le: " + IsValidPhoneNumber(sdt));
+                //MessageBox.Show("sdt hop le: " + IsValidPhoneNumber(sdt));
                 if(!IsValidPhoneNumber(sdt))
                 {
                     ErrMess.SetError(txtDienThoai, "Số điện thoại nhà cung cấp không được bỏ trống và phải đủ 10 bắt đàu bằng 0");

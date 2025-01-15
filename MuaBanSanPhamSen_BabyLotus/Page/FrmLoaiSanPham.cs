@@ -313,10 +313,14 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                         {
                             foreach (var item in ds)
                             {
-                                if (ContainsIgnoreCaseAndPunctuation(item.categoryName, chuoiTim))
+                                if (item.isDelete == false)
                                 {
-                                    dsTim.Add(item);
-                                }
+                                    if (ContainsIgnoreCaseAndPunctuation(item.categoryName, chuoiTim))
+                                    {
+                                        dsTim.Add(item);
+                                    }
+                                }    
+                               
                             }
 
                          
@@ -330,8 +334,8 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     using (var context = new BanSanPhamSen())
                     {
                         var loaiSanPham = context.Category.Find(id);
-                        if (loaiSanPham != null)
-                        {
+                        if (loaiSanPham != null && loaiSanPham.isDelete == false)
+                        { 
                             dsTim.Add(loaiSanPham);
                         }
                     }
