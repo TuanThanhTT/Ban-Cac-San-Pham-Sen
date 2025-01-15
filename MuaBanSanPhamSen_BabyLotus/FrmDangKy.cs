@@ -1,6 +1,8 @@
 ﻿using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -72,14 +74,19 @@ namespace MuaBanSanPhamSen_BabyLotus
            
         }
 
+        private void showFormLogin()
+        {
+            FrmLogin form = new FrmLogin();
+            form.ShowDialog();  
+        }
+
+
         private void lbLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Mở form mới
-            FrmLogin form = new FrmLogin();
-            form.Show();
-
-            // Đóng form hiện tại
-           this.Hide();
+            Thread thread = new Thread(new ThreadStart(showFormLogin));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start(); 
+            this.Close();
 
 
         }
@@ -149,7 +156,7 @@ namespace MuaBanSanPhamSen_BabyLotus
                     {
                         createDate= DateTime.Now,   
                         username = email,
-                        passs = pass,
+                        passs = MaHoaMD5.GetMd5Hash(pass),
                         IsLocked = false,
                         UserAccountId = user.UserId
                     };
@@ -226,10 +233,19 @@ namespace MuaBanSanPhamSen_BabyLotus
         public void clear()
         {
             txtEmail.Text = txtHoTen.Text = txtPass.Text = txtPass.Text = "";
-            this.Hide();   
-            var f = new FrmLogin();
-            f.Show();
+            Thread thread = new Thread(new ThreadStart(loadFormLogin));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            this.Close();
+
         }
+
+        public void loadFormLogin()
+        {
+            var f = new FrmLogin();
+            f.ShowDialog();
+        }
+
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {

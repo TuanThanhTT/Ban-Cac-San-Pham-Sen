@@ -1,5 +1,6 @@
 ﻿
 using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -239,7 +240,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                     var acc = new Account
                     {
                         username = nhanVien.Email,
-                        passs = nhanVien.PhoneNumber,
+                        passs = MaHoaMD5.GetMd5Hash(nhanVien.PhoneNumber),
                         createDate = DateTime.Now,
                         IsLocked = false,
                         EmployAccountId = nhanVien.EmployeeId
@@ -449,10 +450,16 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                             {
 
                                 nhanVien.IsDelete = true;
-                                await context.SaveChangesAsync();
-                                MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                loadGridView();
-                                clear();
+                                //khoa luon tai khoan'
+                                var acc = context.Account.Where(s => s.EmployAccountId == nhanVien.EmployeeId).FirstOrDefault();
+                                if(acc != null) {
+                                    acc.IsLocked = true;
+                                    await context.SaveChangesAsync();
+                                    MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    loadGridView();
+                                    clear();
+                                }
+                                
                             }
                         }
                         else

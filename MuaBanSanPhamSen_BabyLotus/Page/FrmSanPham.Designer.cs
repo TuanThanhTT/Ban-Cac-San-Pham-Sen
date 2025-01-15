@@ -68,6 +68,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ErrSanPham = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnTaoCode = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVSanPham)).BeginInit();
@@ -83,6 +84,7 @@
             this.guna2Panel1.Controls.Add(this.btnXoa);
             this.guna2Panel1.Controls.Add(this.btnCapNhat);
             this.guna2Panel1.Controls.Add(this.btnThem);
+            this.guna2Panel1.Controls.Add(this.btnTaoCode);
             this.guna2Panel1.Controls.Add(this.btnXemAnh);
             this.guna2Panel1.Controls.Add(this.btnChonAnh);
             this.guna2Panel1.Controls.Add(this.CBBLoaiSanPham);
@@ -653,6 +655,24 @@
             // 
             this.ErrSanPham.ContainerControl = this;
             // 
+            // btnTaoCode
+            // 
+            this.btnTaoCode.BorderRadius = 10;
+            this.btnTaoCode.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTaoCode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTaoCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTaoCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTaoCode.FillColor = System.Drawing.Color.Gray;
+            this.btnTaoCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTaoCode.ForeColor = System.Drawing.Color.White;
+            this.btnTaoCode.Location = new System.Drawing.Point(515, 235);
+            this.btnTaoCode.Name = "btnTaoCode";
+            this.btnTaoCode.Size = new System.Drawing.Size(120, 45);
+            this.btnTaoCode.TabIndex = 3;
+            this.btnTaoCode.Text = "Tạo code";
+            this.btnTaoCode.Visible = false;
+            this.btnTaoCode.Click += new System.EventHandler(this.btnTaoCode_Click);
+            // 
             // FrmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -707,5 +727,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private Guna.UI2.WinForms.Guna2Button btnXemAnh;
-	}
+        private Guna.UI2.WinForms.Guna2Button btnTaoCode;
+    }
 }

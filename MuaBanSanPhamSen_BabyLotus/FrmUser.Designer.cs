@@ -101,6 +101,7 @@
             this.btnThoat.Size = new System.Drawing.Size(406, 87);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Đăng Xuất";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // guna2Separator2
             // 
@@ -291,6 +292,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmUser";
             this.Text = "FrmUser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUser_FormClosing);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBAvartar)).EndInit();

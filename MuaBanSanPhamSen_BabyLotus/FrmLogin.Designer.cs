@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.linkLBQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel2.BackgroundImage")));
+            this.guna2Panel2.Controls.Add(this.linkLBQuenMatKhau);
             this.guna2Panel2.Controls.Add(this.lbRegister);
             this.guna2Panel2.Controls.Add(this.CbHienPass);
             this.guna2Panel2.Controls.Add(this.btnDangNhap);
@@ -90,7 +92,7 @@
             this.lbRegister.AutoSize = true;
             this.lbRegister.BackColor = System.Drawing.Color.Transparent;
             this.lbRegister.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegister.Location = new System.Drawing.Point(197, 325);
+            this.lbRegister.Location = new System.Drawing.Point(191, 331);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(126, 18);
             this.lbRegister.TabIndex = 4;
@@ -107,7 +109,7 @@
             this.CbHienPass.CheckedState.BorderThickness = 0;
             this.CbHienPass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CbHienPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbHienPass.Location = new System.Drawing.Point(22, 323);
+            this.CbHienPass.Location = new System.Drawing.Point(22, 288);
             this.CbHienPass.Name = "CbHienPass";
             this.CbHienPass.Size = new System.Drawing.Size(135, 24);
             this.CbHienPass.TabIndex = 3;
@@ -154,7 +156,7 @@
             this.txtPass.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPass.Location = new System.Drawing.Point(19, 252);
+            this.txtPass.Location = new System.Drawing.Point(19, 228);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
@@ -182,7 +184,7 @@
             this.txtUserName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.Black;
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserName.Location = new System.Drawing.Point(19, 160);
+            this.txtUserName.Location = new System.Drawing.Point(19, 136);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -198,7 +200,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 217);
+            this.label3.Location = new System.Drawing.Point(15, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
             this.label3.TabIndex = 0;
@@ -209,7 +211,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 126);
+            this.label2.Location = new System.Drawing.Point(15, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 0;
@@ -221,11 +223,24 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(74, 50);
+            this.label1.Location = new System.Drawing.Point(74, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
+            // 
+            // linkLBQuenMatKhau
+            // 
+            this.linkLBQuenMatKhau.AutoSize = true;
+            this.linkLBQuenMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.linkLBQuenMatKhau.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLBQuenMatKhau.Location = new System.Drawing.Point(21, 331);
+            this.linkLBQuenMatKhau.Name = "linkLBQuenMatKhau";
+            this.linkLBQuenMatKhau.Size = new System.Drawing.Size(110, 18);
+            this.linkLBQuenMatKhau.TabIndex = 4;
+            this.linkLBQuenMatKhau.TabStop = true;
+            this.linkLBQuenMatKhau.Text = "Quên mật khẩu";
+            this.linkLBQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLBQuenMatKhau_LinkClicked);
             // 
             // FrmLogin
             // 
@@ -257,5 +272,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.LinkLabel lbRegister;
+        private System.Windows.Forms.LinkLabel linkLBQuenMatKhau;
     }
 }

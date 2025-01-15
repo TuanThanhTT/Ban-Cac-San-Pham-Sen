@@ -1,4 +1,5 @@
 ﻿using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.PageCode;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -320,6 +321,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
             lbHinhAnh.Visible= false;
             btnChonAnh.Visible= false;
             btnXemAnh.Visible= false;
+            btnTaoCode.Visible= false;  
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -375,6 +377,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
                         if (!string.IsNullOrEmpty(sp.imgs.Trim()))
                         {
 							btnXemAnh.Visible= true;    
+                            btnTaoCode.Visible = true;
 
 						}
                     }
@@ -752,6 +755,17 @@ namespace MuaBanSanPhamSen_BabyLotus.Page
         private void GVSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnTaoCode_Click(object sender, EventArgs e)
+        {
+            var maSP = txtMaSP.Text;    
+            if(string.IsNullOrEmpty(maSP))
+            {
+                return;
+            }
+            var f = new FrmTaoBarCode(maSP);
+            f.ShowDialog();
         }
     }
 }

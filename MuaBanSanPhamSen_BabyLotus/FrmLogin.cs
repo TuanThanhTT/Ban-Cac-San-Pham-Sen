@@ -1,6 +1,8 @@
 ﻿using BeHatSenLotus.Model;
+using MuaBanSanPhamSen_BabyLotus.Service;
 using System;
 using System.Data.Entity;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -14,6 +16,9 @@ namespace MuaBanSanPhamSen_BabyLotus
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
         }
+
+       
+
 
         private async void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -58,24 +63,37 @@ namespace MuaBanSanPhamSen_BabyLotus
                     if (acc != null )
                     {
                         
-                        if(acc.passs.Trim() == pass.Trim())
+                        if(acc.passs.Trim() == MaHoaMD5.GetMd5Hash(pass.Trim()))
                         {
                             if (acc.EmployAccountId== null)
                             {
                                 var user = context.Users.Find(acc.UserAccountId);
                                 if (user != null)
                                 {
-                                    var f = new FrmUser(user);
-                                    f.Show();
-
+                                    Thread thread = new Thread(new ThreadStart(() =>
+                                    {
+                                        var f = new FrmUser(user);
+                                        f.ShowDialog(); 
+                                    }));
+                                    thread.SetApartmentState(ApartmentState.STA);
+                                    thread.Start();
+                                   
+                                    this.Close();   
                                 }
                             }
                             else{
                                 var employ = context.Employees.Find(acc.EmployAccountId);
                                 if (employ != null)
                                 {
-                                    var f = new FrmMain(employ);
-                                    f.Show();
+                                  
+                                    Thread thread = new Thread(new ThreadStart(() =>
+                                    {
+                                        var f = new FrmMain(employ);
+                                        f.ShowDialog();
+                                    }));
+                                    thread.SetApartmentState(ApartmentState.STA);
+                                    thread.Start(); 
+                                    this.Close();   
 
                                 }
                             }
@@ -118,11 +136,20 @@ namespace MuaBanSanPhamSen_BabyLotus
             }
         }
 
-        private void lbRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void showFormDangKy()
         {
             var f = new FrmDangKy();
-            this.Hide();
-            f.Show();
+            f.ShowDialog();
+        }
+
+
+        private void lbRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Thread thread = new Thread(new ThreadStart(showFormDangKy));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+           
+            this.Close();   
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
@@ -145,6 +172,21 @@ namespace MuaBanSanPhamSen_BabyLotus
                 txtPass.PlaceholderForeColor = System.Drawing.Color.Gray;
 
             }
+        }
+
+        private void loadFormQuenMatKhau()
+        {
+            var form = new FrmQuenMatKhau();  
+            form.ShowDialog();
+
+        }
+        private void linkLBQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Thread thread = new Thread(new ThreadStart(loadFormQuenMatKhau));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            
+            this.Close();
         }
     }
 }

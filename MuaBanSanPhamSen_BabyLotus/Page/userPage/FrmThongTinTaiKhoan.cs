@@ -13,6 +13,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
     public partial class FrmThongTinTaiKhoan : UserControl
     {
         private User user;
+       
         public FrmThongTinTaiKhoan(User user)
         {
             this.user = user;   
@@ -303,7 +304,7 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                         context.SaveChanges();
                         MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
-                    }
+                    } 
                 }
 
 
@@ -361,9 +362,10 @@ namespace MuaBanSanPhamSen_BabyLotus.Page.userPage
                         }
 
                     }
-
-
-
+                }
+                else
+                {
+                    MessageBox.Show("User null");
                 }
             }
             catch(Exception ex) { 

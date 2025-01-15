@@ -3,6 +3,7 @@ using Guna.UI2.WinForms;
 using MuaBanSanPhamSen_BabyLotus.Page;
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MuaBanSanPhamSen_BabyLotus
@@ -164,11 +165,27 @@ namespace MuaBanSanPhamSen_BabyLotus
 
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        public void Logout()
         {
-            this.Hide();
             var f = new FrmLogin();
             f.Show();
+        }
+
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+           Thread thread = new Thread(new ThreadStart(Logout));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start(); 
+            this.Close();
+
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Bạn muốn thoát chương trình?",
+    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.No) e.Cancel = true;
         }
     }
 }
