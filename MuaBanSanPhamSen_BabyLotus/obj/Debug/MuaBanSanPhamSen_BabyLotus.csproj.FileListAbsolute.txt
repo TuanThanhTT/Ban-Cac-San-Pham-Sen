@@ -60,3 +60,5 @@ D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\zxing.xml
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\zxing.presentation.xml
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.FrmQuenMatKhau.resources
 D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.FrmDoiMatKhau.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmLienHe.resources
+D:\DoAnMonHoc\MuaBanSanPhamSen_BabyLotus\MuaBanSanPhamSen_BabyLotus\obj\Debug\MuaBanSanPhamSen_BabyLotus.Page.userPage.FrmThongTinGioiThieu.resources

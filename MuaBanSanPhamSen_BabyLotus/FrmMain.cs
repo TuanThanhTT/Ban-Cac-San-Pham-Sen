@@ -19,7 +19,7 @@ namespace MuaBanSanPhamSen_BabyLotus
             this.employ = employ;   
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-           
+            loadName();
           // Đảm bảo form luôn ở trên cùng
         }
 
@@ -222,6 +222,11 @@ namespace MuaBanSanPhamSen_BabyLotus
             DialogResult dlr = MessageBox.Show("Bạn muốn thoát chương trình?",
     "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.No) e.Cancel = true;
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -205,5 +205,13 @@ namespace MuaBanSanPhamSen_BabyLotus
     "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.No) e.Cancel = true;
         }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            updateBoder(btnSanPham);
+            addTabMain();
+            var form = new FrmLienHe();
+            addTabPage(tabMain, form);
+        }
     }
 }

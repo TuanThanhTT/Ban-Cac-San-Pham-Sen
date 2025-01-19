@@ -259,11 +259,23 @@
     <Compile Include="Page\userPage\FrmHomeUser.Designer.cs">
       <DependentUpon>FrmHomeUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\userPage\FrmLienHe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmLienHe.Designer.cs">
+      <DependentUpon>FrmLienHe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\userPage\FrmSanPhamTuongTu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Page\userPage\FrmSanPhamTuongTu.Designer.cs">
       <DependentUpon>FrmSanPhamTuongTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\userPage\FrmThongTinGioiThieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\userPage\FrmThongTinGioiThieu.Designer.cs">
+      <DependentUpon>FrmThongTinGioiThieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Page\userPage\FrmThongTinTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -375,8 +387,14 @@
     <EmbeddedResource Include="Page\userPage\FrmHomeUser.resx">
       <DependentUpon>FrmHomeUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmLienHe.resx">
+      <DependentUpon>FrmLienHe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\userPage\FrmSanPhamTuongTu.resx">
       <DependentUpon>FrmSanPhamTuongTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\userPage\FrmThongTinGioiThieu.resx">
+      <DependentUpon>FrmThongTinGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\userPage\FrmThongTinTaiKhoan.resx">
       <DependentUpon>FrmThongTinTaiKhoan.cs</DependentUpon>
@@ -428,7 +446,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -436,6 +453,9 @@
       <Project>{0f51fe22-5221-43d1-850b-0deb2fab1afa}</Project>
       <Name>BeHatSenLotus</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\3986701-online-shop-store-store-icon_112278.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

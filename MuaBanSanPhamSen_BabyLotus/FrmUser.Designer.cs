@@ -136,6 +136,7 @@
             this.btnSanPham.Size = new System.Drawing.Size(418, 60);
             this.btnSanPham.TabIndex = 4;
             this.btnSanPham.Text = "Liên Hệ";
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnLichSu
             // 
@@ -290,6 +291,7 @@
             this.ClientSize = new System.Drawing.Size(1513, 905);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.guna2Panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUser";
             this.Text = "FrmUser";
             this.guna2Panel1.ResumeLayout(false);

@@ -250,6 +250,7 @@
             this.ClientSize = new System.Drawing.Size(815, 450);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.guna2Panel1.ResumeLayout(false);
